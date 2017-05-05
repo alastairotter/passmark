@@ -1,0 +1,10 @@
+Notes: 
+
+
+2016/12/24, 5:40 PM
+Basic geo changes: split lat-lon into two separate columns. Imported into CartoDB to verify and then exported to geoJson file.
+
+2016/12/24, 5:04 PM
+Added GPS co-ordinates for Onverwacht Primary School in Cullinan (used address to look up details) - Added to 20 schools listed for change.
+
+

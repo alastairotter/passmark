@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How big are South Africa's schools?</title>
+   
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Open+Sans:400,800" rel="stylesheet">
+ 
+
+    <script src="lib/d3.v4.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="../styles-inside.css">
+   <script src="school_numbers.json"></script>
+    
+    
+   
+  
+    
+    <style>
+        
+        body { 
+            font-family: "Open sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 70%;
+            color: #3d3d3d;
+        }
+        
+        a { 
+            color: dodgerblue;
+        }
+        #chart { 
+            width: 800px;
+            height: 950px;
+            margin-left: auto; 
+            margin-right: auto;
+            
+            
+        }
+        
+       
+        
+        .explainer { 
+            position: absolute; 
+            top: 10px;
+            left: 10px;
+            z-index: 400; 
+           
+            font-size: 110%;
+            font-weight: 700;
+            max-width: 200px;
+            
+        }
+        
+        .content_new { 
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 130%;
+            line-height: 140%;
+            margin-top: 140px;
+            text-align:center;
+            
+        }
+        .highlight { 
+            font-weight: 700;
+        }
+        
+        .headline { 
+            font-family: Lato ,Arial, "Helvetica Neue", Helvetica, sans-serif;
+            width: 100%;
+            font-size: 300%;
+            font-weight: 700; 
+            line-height: 200%;
+            text-align: center;
+            color: #000;
+        }
+        
+        .crosshead { 
+            font-family: "Slabo 27px" ,Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: 700; 
+            font-size: 160%;
+            margin-top: 5%;
+            color:#000;
+        }
+        
+        .labels { 
+            stroke: none; 
+            fill: #000;
+            font-size: 100%;
+            
+            
+        }
+        
+        .show-schools { 
+            position: absolute; 
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+        
+        .public-schools { 
+            position: absolute; 
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+        .header_chart { 
+            position: absolute; 
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            font-weight: 700;
+            font-size: 90%;
+            width: 100px;
+            text-align: right;
+        }
+        
+        
+        line { 
+            shape-rendering: crispEdges;
+        }
+        
+        g.all { 
+            fill: #eee;
+            background: #eee;
+        }
+        
+        .tooltip { 
+            position: absolute ;
+            top: 0px; 
+            left: 500px;
+            z-index: 200; 
+            opacity: 0;
+            padding: 5px;
+            background: #fff;
+            text-align: center;
+            
+            }
+        .fa-spinner { 
+            color: dodgerblue;
+        }
+        .loading {
+            position: absolute;
+            top: 0px;
+            width: 100px;
+            text-align: center; 
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        
+        .sub { 
+            font-weight: 400;
+            color: gray;
+            font-size: 100%;
+        }
+        
+        .leaflet-container { 
+            background: #fff;
+        }
+        
+        .header { 
+            width: 100%; 
+            text-align: center;
+            background: none;
+            position: absolute; 
+            top: 0px;
+            left: 0px;
+            height: 100px;
+            background: #000;
+            padding-top: 2%;
+            font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 300%;
+            font-weight: 700;
+            color: #fff;
+            background-image: url("../images/scaled_schooldesks.jpg");
+    background-position: right bottom;
+    background-size: cover;
+            
+            text-shadow: 1px 1px 26px rgba(0, 0, 0, 1);
+        }
+        
+        .header a { 
+            font-weight: 400;
+            color: #eee;
+            
+            
+        }
+        
+        .header a:hover { 
+            color: #fff;
+        }
+        
+        .taco { 
+    margin-top: 50px;
+}
+        
+        
+    </style>
+</head>
+<body>
+
+
+
+<div class="nav-wrap">
+</div>
+
+   
+
+<div id="container">
+<div class="header">
+   Passmark <i class="fa fa-check-square-o" aria-hidden="true"></i>
+    <div style="font-size: 40%; margin-top: 1%;"><a  href="http://passmark.org.za">Home &nbsp; 
+</a><a href="../about.html" style="margin-right: 0;">About</a></div>
+    
+    </div>
+
+<div class="tooltip">Tooltip</div>
+
+
+<div class="content_new">
+    <div class="headline">How big are South Africa's schools?</div>
+    <p>South Africa has more than 25,000 schools, 23,000 of which are public schools that cater for more than 12-million learners. In theory, that means on average there is one school for every 500 learners. But, in reality, that isn’t the case. Some schools cater to just a handful of learners while others have thousands of children.</p>
+    <p><span class="highlight">Passmark</span> used the schools masterlist for the first quarter of 2016, the latest data available from the Department of Basic Education, to look at how big South Africa’s schools are. The interactive box plots below give you an idea of how unequally distributed South Africa’s learners are across the country’s schools. The first chart (the blue one) looks at all the schools in the country – the others look at the schools in each province. Each school is represented by a dot. If you hover over them you will see the name of each school and the number of pupils it had at the beginning of 2016. </p>
+<p>The line represents the range of learners. So the smallest schools reportedly had one pupil each (believe it or not, there’s two of them, one in the Free State and one in the Eastern Cape). At the other end of the range, the largest school in the country has 3,795 pupils.</p>
+<p>On each of the lines there is a box with three numbers. The middle number is the point where half of the schools lie (the median). So on the national line the middle number is 412. That means that half of the 23,687 public schools on the South Africa masterlist (about 12,000 schools) have fewer than 412 pupils. The number on the left, 204, shows that a quarter (25%) of the schools have less than 204 pupils, and the number on the right shows that a quarter have more than 769 pupils.</p>
+  
+   <div id="chart" style="font-size: 90%;"></div>
+   
+   
+    <p><div class="crosshead">Unevenly distributed</div></p>
+<p>If you look at the charts for the provinces, you’ll see the pupils at Gauteng and Western Cape schools are reasonably well distributed across the available schools when compared with the national picture. In Gauteng half the schools have more than 971 pupils while in the Western Cape half have more than 744. </p>
+<p>But at the other end of the spectrum are the rural provinces, the Eastern Cape and KwaZulu-Natal. Both have well over 5,000 schools each – the others have between 1,000 to 2,000 schools each, with the exception of the Northern Cape, which has 544 schools – but despite large numbers of schools, the actual size of these schools tends to be fairly small. </p>
+<p>The Eastern Cape has 5,451 schools but half of those (about 2,700) have fewer than 244 pupils each. KwaZulu-Natal similarly has a large number of schools (5,895) but half of those (close to 3,000) cater for just 379 pupils or less. </p>
+<p>Interestingly, despite having some of the smallest schools in the country, the Eastern Cape is also home to the largest school: Ngangolwandle Senior Secondary School is a no-fee school in Elliotdale which had 3,795 pupils in 2016, according to the masterlist.</p>
+
+    <p>According to the Department of Basic Education’s classification system a <span class="highlight">small primary school</span> has a minimum of 135 pupils. A <span class="highlight">small secondary school</span> has a minimum capacity of 200 learners. If a primary school has more than 931 learners, it’s classifed as a <span class="highlight">mega primary school</span>, a <span class="highlight">mega secondary school</span> has more than 1,001 learners.</p> 
+
+<p>In the Eastern Cape, for example, where a quarter, or more than 1,000 schools, had fewer than 135 learners at the beginning of 2016, a number of schools have already been closed or are pending closure because of the low number of learners enrolled in them, according to <a href="http://www.education.gov.za/LinkClick.aspx?fileticket=0j-74NP7iOw%3d&tabid=92&portalid=0&mid=5823&forcedownload=true">a report published in November 2016</a> by the province’s department of education.</p> </p>
+<p>In fact, the MEC for education in the province stated in the report that all “one-teacher schools” – schools with fewer than 40 learners – of which 295 had been identified, would be closed by the end of the 2016 academic year. A further 1,902 smaller schools were being targeted for rationalisation and had reportedly been issued with letters “requesting a response as to compelling reasons for maintaining the school”. Decisions about these schools should be finalised by 2018, the report stated.</p>
+<p>The Eastern Cape is not the only province where schools with a small number of learners are pending closure. It’s hard to believe, but there are 88 schools on the list with fewer than 10 pupils, scattered around the country. All of them are pending closure, according to their status on the master list. </p>
+        
+
+        
+</div>
+
+
+
+<div class="content_new" style="font-size: 110%; margin-bottom: 1%;">
+   <p>
+            Share this<div class="addthis_inline_share_toolbox"></div>
+        </p>
+        <P>
+    Data source: Ordinary Schools Masterlist Q1 2016, December 2016, supplied to Passmark. The data was used exactly as it was received from the education department as this is the official schools list. The charts are primarily modelled on <a href="http://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots">boxplots</a> except that we did not exclude outliers for illustrative purposes. Data: <a href="http://twitter.com/LauraJGrant">@LauraJGrant</a> Programming: <a href="http://www.twitter.com/alastairotter">@alastairotter</a> A project of the <a href="http://mediahack.co.za">Media Hack Collective</a> and <a href="http://passmark.org.za">Passmark.org.za</a>
+    </P>
+    
+</div>
+
+   <div class="info" style="font-size: 120%;">
+      
+      <div class="newsletter-signup" >
+                
+                Join our email newsletter and be the first to know when we release new data. 
+            
+           <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#000; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    
+    #mc-embedded-subscribe-form { padding: 10px; line-height: 300%;}
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//passmark.us15.list-manage.com/subscribe/post?u=7b7219f040b95a234ff07893c&amp;id=99df178394" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7b7219f040b95a234ff07893c_99df178394" tabindex="-1" value=""></div><br />
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+           </div>
+       <div class="info-content">
+           <span class="bold">Contact Passmark</span><br />
+        <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; <a href="mailto:info@passmark.org.za">info@passmark.org.za</a><br />
+        <i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; <a href="http://twitter.com/passmarkza">@passmarkza</a><br />
+        <i class="fa fa-facebook-square" aria-hidden="true"></i> &nbsp; <a href="https://www.facebook.com/passmarkza/">@passmarkza</a><br />
+        <i class="fa fa-youtube" aria-hidden="true"></i> &nbsp; <a href="https://www.youtube.com/channel/UCQsT2jrqzNE3chGUsyTQfvg/videos">Passmark on YouTube</a>
+
+        </div>
+        
+        <div class="taco">
+               <img src="../images/Taco-Kuiper-award-logo.png" width="130px"><br />
+               Passmark was made possible by funding from the <br />Taco Kuiper Fund for Investigative Journalism at Wits University.
+               
+           </div>
+           
+           
+    </div>
+
+
+
+<script>
+    
+   console.log(datajson);
+    
+    var colors = ["#01c9ec",
+"#7f00c5",
+"#7bca00",
+"#0032af",
+"#8f6372",
+"#820096",
+"#ff8ce8",
+"#01449c",
+"#71004e",
+"#a283ff"];
+    
+    var margin = { top: 50,right: 50, bottom: 50, left: 100 }
+    
+    var width = 800 - margin.left - margin.right, 
+        height =  950 - margin.top - margin.bottom;
+
+    var svg = d3.select("#chart")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+    
+    var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    
+    var x = d3.scaleLinear()
+        .range([0, width]);
+    
+    var x2 = d3.scaleLinear()
+        .range([0,width])
+    
+
+    
+    
+     // POSITION SCHOOL PICKER
+        var pickerPos = d3.select("#chart").node().getBoundingClientRect();
+    
+        d3.select(".explainer1")
+            .style("left", pickerPos.left + "px")
+            .style("top", pickerPos.top + 170 +"px")
+       
+        
+        
+        d3.select(".show-schools")
+            .style("left", pickerPos.right - 200 + "px")
+            .style("top", pickerPos.top +50 + "px")
+        
+        
+        var tooltip = d3.select(".tooltip")
+        
+       
+        
+       
+  
+    
+    
+    var addBox = function (dataSrc, yHeight, title, color, province) { 
+        
+        // add group
+        var group = g.append("g")
+            .attr("id", dataSrc);
+        
+        
+         d3.select("." + title)
+            .style("left", pickerPos.left - 20 + "px")
+            .style("top", yHeight + pickerPos.top + 40 + "px")
+            
+         
+        
+//        d3.csv("school_numbers.csv", function (data) { 
+            
+            
+            
+            // JUST PUBLIC SCHOOLS
+            var data = datajson.filter( function (d) { return d.Sector === "Public"; })
+            
+            originalData = data;
+            
+        if(dataSrc !== "all") { 
+            
+          
+            var data = data.filter( function (d) { 
+                return d.Province === dataSrc; 
+            })
+        }
+            
+            // GET SCHOOL COUNTS
+            var total = data.length;
+            total = d3.format(',')(total);
+            console.log(total);
+            
+            d3.select("." + title + "-sub")
+            .html(total + " schools")
+            
+
+            data.forEach( function (d) { 
+            d.Learners = +d.Learners;
+        })
+
+            
+        
+        var median = +((data.length+1)/2).toFixed(0);
+        var quintile1 = +(.25 * (data.length+1)).toFixed(0);
+            quintile2 = +(.75 * (data.length+1)).toFixed(0);
+        
+        var iq = quintile2 - quintile1; 
+        
+        var lowerFence = +(quintile1 - 1.5*iq).toFixed(0), //429.75 - 1.5 * (iq)
+            upperFence = +(quintile2 + 3*iq).toFixed(0), //quintile2 + 3.0 * (iq)
+            upperInnerFence = +(quintile1 + 1.5*iq).toFixed(0); //429.75 - 1.5 * (iq)
+        
+        var min = d3.min(data, function (d) { return d.Learners; }),
+            max = d3.max(data, function (d) { return d.Learners; });
+
+        
+            
+  
+        
+        
+        
+        x.domain(d3.extent(data, function (d) { return d.Learners; }));
+//
+     
+        
+        var axis = group.append("line")
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr("y1", yHeight)
+            .attr("y2", yHeight)
+            .style("stroke", "#000")
+            .style("stroke-width",1)
+            .style("stroke-dasharray", "1,2")
+        
+         var whisker1 = group.append("line")
+            .attr("x1", 0)
+            .attr("x2", 0)
+            .attr("y1", yHeight - 15)
+            .attr("y2", yHeight + 15)
+            .style("stroke", "#000")
+            .style("stroke-width",1)
+         
+         var whisker2 = group.append("line")
+            .attr("x1", width)
+            .attr("x2", width)
+            .attr("y1",yHeight - 15)
+            .attr("y2", yHeight + 15)
+            .style("stroke", "#000")
+            .style("stroke-width",1)
+         
+
+         
+         
+         var labelMin = group.append("text")
+            .text(min)
+            .attr("class", "labels")
+            .attr("x", 0)
+            .attr("y", yHeight - 20)
+            .style("text-anchor", "middle")
+            .classed("label-min", true)
+         
+         var maxLabel = d3.format(',')(max);
+         
+         var labelMax = group.append("text")
+            .text(maxLabel + " learners")
+            .attr("class", "labels")
+            .attr("x", width)
+            .attr("y", yHeight - 20)
+            .style("text-anchor", "middle")
+             .classed("label-max", true)
+         
+         var labelMedian = group.append("text")
+            .text(data[median].Learners)
+            .attr("class", "labels")
+            .attr("x", x(data[median].Learners))
+            .attr("y", yHeight - 20)
+            .style("text-anchor", "middle")
+            .classed("medianlabel", true)
+         
+         var labelQ1 = group.append("text")
+            .text(data[quintile1].Learners)
+            .attr("class", "labels")
+            .attr("x", x(data[quintile1].Learners))
+            .attr("y", yHeight + 30)
+            .style("text-anchor", "middle")
+            .classed("q1label", true)
+         
+         var labelQ2 = group.append("text")
+            .text(data[quintile2].Learners)
+            .attr("class", "labels")
+            .attr("x", x(data[quintile2].Learners))
+            .attr("y", yHeight + 30)
+            .style("text-anchor", "middle")
+            .classed("q2label", true)
+         
+           
+        
+        var center = group.append("line")
+            .attr("x1", x(data[median].Learners))
+            .attr("x2", x(data[median].Learners))
+            .attr("y1", yHeight - 10)
+            .attr("y2", yHeight + 10)
+            .style("stroke", "none")
+            .style("stroke-width", 3)
+            .style("fill", "#000")
+        
+        
+       
+        
+        // ADD RECT
+        var rect1 = group.append("rect")
+            .attr("x", x(data[quintile1].Learners))
+            .attr("y", yHeight - 10)
+            .attr("width", x(data[median].Learners) - x(data[quintile1].Learners))
+            .attr("height", 20)
+            .style("fill","none")
+            .style("stroke", "#000")
+            .style("stroke-width", 1)
+            .style("shape-rendering","crispEdges")
+            .attr("class", "q1")
+//            .style("fill", "gray")
+//            .style("opacity", 0.2)
+        
+        var rect2 = group.append("rect")
+            .attr("x", x(data[median].Learners))
+            .attr("y", yHeight - 10)
+            .attr("width", x(data[quintile2].Learners) - x(data[median].Learners))
+            .attr("height", 20)
+            .style("fill","none")
+            .style("stroke", "#000")
+            .style("stroke-width", 1)
+            .style("shape-rendering","crispEdges")
+            .attr("class", "q2")
+//           
+     
+        
+//        
+        
+      
+        group.append("text")
+            .attr("x", -10)
+            .attr("y", yHeight)
+            .html(province)
+            .attr("class", "header_chart")
+            .style("text-anchor", "end")
+        
+        group.append("text")
+            .attr("x", -10)
+            .attr("y", yHeight + 15)
+            .html(total + " schools")
+            .attr("class", "sub")
+            .style("text-anchor", "end")
+        
+        
+       
+        
+        
+
+        
+        
+        
+        
+//        })
+        
+        
+        
+        
+        
+    }
+    
+    
+    function addSchools(dataSrc, yHeight, title, color, province) { 
+        
+        d3.csv("school_numbers.csv", function (data) { 
+            
+            
+             // JUST PUBLIC SCHOOLS
+            var data = data.filter( function (d) { return d.Sector === "Public"; })
+            
+            originalData = data;
+            
+        if(dataSrc !== "all") { 
+            
+          
+            var data = data.filter( function (d) { 
+                return d.Province === dataSrc; 
+            })
+        }
+            
+            // GET SCHOOL COUNTS
+            var total = data.length;
+            total = d3.format(',')(total);
+            console.log(total);
+            
+            d3.select("." + title + "-sub")
+            .html(total + " schools")
+            
+
+            data.forEach( function (d) { 
+            d.Learners = +d.Learners;
+        })
+            var x = d3.scaleLinear()
+        .range([100, width+100]);
+            x.domain(d3.extent(data, function (d) { return d.Learners; }));
+            
+        var svg = d3.select("svg").append("g")
+            
+        svg.selectAll(".schools_" + dataSrc )
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) { 
+                return x(d.Learners);
+            })
+            .attr("cy", yHeight)
+            .attr("r",2)
+            .style("fill", colors[color])
+            .style("stroke-width", 10)
+            .style("stroke", "#000")
+            .style("stroke-opacity", 0)
+//            .style("display", "none")
+            .attr("class", "schools")
+            .on("mouseover", function (d) { 
+                console.log(d.Learners);
+                d3.select(this)
+                    .attr("r", 10)
+                    .style("stroke-width", 0)
+                
+                tooltip.style("opacity", 0.8).html(d.School + "<br /> " + d.Learners + " learners")
+                    
+                    
+            })
+            .on("mousemove", function (d) { 
+                tooltip.style("left", (d3.event.pageX) - 50 + "px") 
+                    .style("top", (d3.event.pageY) - 55 + "px")
+            })
+            .on("mouseout", function (d) { 
+                
+                d3.select(this)
+                    .attr("r", 2)
+                    .style("stroke-width", 10)
+                
+                tooltip.style("opacity", 0)
+                
+            })
+        
+        }); // END DATA FUNCTION
+    
+    }
+    
+    addBox("all", 50, "national", 0, "National");
+    
+    addBox("GP", 140, "gauteng", 1, "Gauteng");
+    
+    addBox("KZ", 230, "kwazulunatal", 2, "KwaZulu-Natal");
+    
+    addBox("EC", 320, "easterncape", 3, "Eastern Cape");
+    
+    addBox("WC", 410, "westerncape", 4, "Western Cape");
+    
+    addBox("NC", 500, "northerncape", 5, "Northern Cape");
+    
+    addBox("MP", 590, "mpumalanga", 6, "Mpumalanga");
+    
+    addBox("LP", 680, "limpopo", 7, "Limpopo");
+    
+    addBox("NW", 770, "northwest", 8, "North West");
+    
+    addBox("FS", 860, "freestate", 9, "Free State");
+    
+    
+    // ADD SCHOOL POINTS
+    
+    
+    addSchools("all", 100, "national", 0, "National");
+    
+    addSchools("GP", 190, "gauteng", 1, "Gauteng");
+    
+    addSchools("KZ", 280, "kwazulunatal", 2, "KwaZulu-Natal");
+    
+    addSchools("EC", 370, "easterncape", 3, "Eastern Cape");
+    
+    addSchools("WC", 460, "westerncape", 4, "Western Cape");
+    
+    addSchools("NC", 550, "northerncape", 5, "Northern Cape");
+    
+    addSchools("MP", 640, "mpumalanga", 6, "Mpumalanga");
+    
+    addSchools("LP", 730, "limpopo", 7, "Limpopo");
+    
+    addSchools("NW", 820, "northwest", 8, "North West");
+    
+    addSchools("FS", 910, "freestate", 9, "Free State");
+    
+    
+    var prov = ["GP", "WC", "NC", "EC", "NW", "LP", "KZ", "MP", "FS"];
+    var provTitle = ["gauteng","westerncape", "northerncape","easterncape","northwest","limpopo","kwazulunatal","mpumalanga","freestate"];
+    
+
+    
+
+   
+    
+</script>
+
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4d708b425b845fd3"></script> 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91656845-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

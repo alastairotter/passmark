@@ -1,0 +1,2747 @@
+var data = [
+ {
+   "topic": "Africa",
+   "date": "2009-06-03",
+   "words": 266
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2009-06-03",
+   "words": 54
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2009-06-03",
+   "words": 40
+ },
+ {
+   "topic": "Corruption",
+   "date": "2009-06-03",
+   "words": 42
+ },
+ {
+   "topic": "Crime",
+   "date": "2009-06-03",
+   "words": 288
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2009-06-03",
+   "words": 196
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Education",
+   "date": "2009-06-03",
+   "words": 363
+ },
+ {
+   "topic": "Elections",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2009-06-03",
+   "words": 13
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2009-06-03",
+   "words": 31
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2009-06-03",
+   "words": 9
+ },
+ {
+   "topic": "Health",
+   "date": "2009-06-03",
+   "words": 211
+ },
+ {
+   "topic": "Housing",
+   "date": "2009-06-03",
+   "words": 61
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2009-06-03",
+   "words": 96
+ },
+ {
+   "topic": "Inequality",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2009-06-03",
+   "words": 132
+ },
+ {
+   "topic": "Innovation",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2009-06-03",
+   "words": 135
+ },
+ {
+   "topic": "Jobs",
+   "date": "2009-06-03",
+   "words": 342
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2009-06-03",
+   "words": 79
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Local government",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Mandela",
+   "date": "2009-06-03",
+   "words": 191
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2009-06-03",
+   "words": 11
+ },
+ {
+   "topic": "Police service",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2009-06-03",
+   "words": 180
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2009-06-03",
+   "words": 239
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2009-06-03",
+   "words": 266
+ },
+ {
+   "topic": "SAA",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Small business development",
+   "date": "2009-06-03",
+   "words": 59
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2009-06-03",
+   "words": 399
+ },
+ {
+   "topic": "Social grants",
+   "date": "2009-06-03",
+   "words": 77
+ },
+ {
+   "topic": "Social security",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Transport",
+   "date": "2009-06-03",
+   "words": 108
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2009-06-03",
+   "words": 18
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2009-06-03",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2009-06-03",
+   "words": 74
+ },
+ {
+   "topic": "Africa",
+   "date": "2010-02-11",
+   "words": 67
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2010-02-11",
+   "words": 27
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2010-02-11",
+   "words": 59
+ },
+ {
+   "topic": "Corruption",
+   "date": "2010-02-11",
+   "words": 73
+ },
+ {
+   "topic": "Crime",
+   "date": "2010-02-11",
+   "words": 114
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2010-02-11",
+   "words": 193
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Education",
+   "date": "2010-02-11",
+   "words": 374
+ },
+ {
+   "topic": "Elections",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2010-02-11",
+   "words": 68
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2010-02-11",
+   "words": 115
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Health",
+   "date": "2010-02-11",
+   "words": 196
+ },
+ {
+   "topic": "Housing",
+   "date": "2010-02-11",
+   "words": 98
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2010-02-11",
+   "words": 14
+ },
+ {
+   "topic": "Inequality",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2010-02-11",
+   "words": 35
+ },
+ {
+   "topic": "Innovation",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2010-02-11",
+   "words": 12
+ },
+ {
+   "topic": "Jobs",
+   "date": "2010-02-11",
+   "words": 157
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2010-02-11",
+   "words": 33
+ },
+ {
+   "topic": "Local government",
+   "date": "2010-02-11",
+   "words": 175
+ },
+ {
+   "topic": "Mandela",
+   "date": "2010-02-11",
+   "words": 331
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Police service",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2010-02-11",
+   "words": 438
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2010-02-11",
+   "words": 113
+ },
+ {
+   "topic": "SAA",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Small business development",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2010-02-11",
+   "words": 224
+ },
+ {
+   "topic": "Social grants",
+   "date": "2010-02-11",
+   "words": 52
+ },
+ {
+   "topic": "Social security",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Transport",
+   "date": "2010-02-11",
+   "words": 27
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2010-02-11",
+   "words": 36
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2010-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2010-02-11",
+   "words": 113
+ },
+ {
+   "topic": "Africa",
+   "date": "2011-02-10",
+   "words": 342
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2011-02-10",
+   "words": 42
+ },
+ {
+   "topic": "Corruption",
+   "date": "2011-02-10",
+   "words": 141
+ },
+ {
+   "topic": "Crime",
+   "date": "2011-02-10",
+   "words": 207
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2011-02-10",
+   "words": 151
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2011-02-10",
+   "words": 59
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Education",
+   "date": "2011-02-10",
+   "words": 245
+ },
+ {
+   "topic": "Elections",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2011-02-10",
+   "words": 104
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Health",
+   "date": "2011-02-10",
+   "words": 204
+ },
+ {
+   "topic": "Housing",
+   "date": "2011-02-10",
+   "words": 56
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2011-02-10",
+   "words": 75
+ },
+ {
+   "topic": "Inequality",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2011-02-10",
+   "words": 136
+ },
+ {
+   "topic": "Innovation",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2011-02-10",
+   "words": 130
+ },
+ {
+   "topic": "Jobs",
+   "date": "2011-02-10",
+   "words": 629
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2011-02-10",
+   "words": 11
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Local government",
+   "date": "2011-02-10",
+   "words": 207
+ },
+ {
+   "topic": "Mandela",
+   "date": "2011-02-10",
+   "words": 392
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2011-02-10",
+   "words": 148
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2011-02-10",
+   "words": 52
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Police service",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2011-02-10",
+   "words": 50
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2011-02-10",
+   "words": 116
+ },
+ {
+   "topic": "SAA",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2011-02-10",
+   "words": 245
+ },
+ {
+   "topic": "Small business development",
+   "date": "2011-02-10",
+   "words": 165
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2011-02-10",
+   "words": 240
+ },
+ {
+   "topic": "Social grants",
+   "date": "2011-02-10",
+   "words": 69
+ },
+ {
+   "topic": "Social security",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2011-02-10",
+   "words": 228
+ },
+ {
+   "topic": "Transport",
+   "date": "2011-02-10",
+   "words": 25
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2011-02-10",
+   "words": 51
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2011-02-10",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2011-02-10",
+   "words": 39
+ },
+ {
+   "topic": "Africa",
+   "date": "2012-02-09",
+   "words": 42
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2012-02-09",
+   "words": 52
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2012-02-09",
+   "words": null
+ },
+ {
+   "topic": "Corruption",
+   "date": "2012-02-09",
+   "words": 178
+ },
+ {
+   "topic": "Crime",
+   "date": "2012-02-09",
+   "words": 66
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2012-02-09",
+   "words": 37
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Education",
+   "date": "2012-02-09",
+   "words": 469
+ },
+ {
+   "topic": "Elections",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2012-02-09",
+   "words": 188
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2012-02-09",
+   "words": 70
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2012-02-09",
+   "words": 32
+ },
+ {
+   "topic": "Health",
+   "date": "2012-02-09",
+   "words": 81
+ },
+ {
+   "topic": "Housing",
+   "date": "2012-02-09",
+   "words": 482
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2012-02-09",
+   "words": 112
+ },
+ {
+   "topic": "Inequality",
+   "date": "2012-02-09",
+   "words": 21
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Innovation",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Jobs",
+   "date": "2012-02-09",
+   "words": 392
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2012-02-09",
+   "words": 52
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2012-02-09",
+   "words": 132
+ },
+ {
+   "topic": "Local government",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Mandela",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2012-02-09",
+   "words": 110
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2012-02-09",
+   "words": 38
+ },
+ {
+   "topic": "Police service",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "SAA",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Small business development",
+   "date": "2012-02-09",
+   "words": 19
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2012-02-09",
+   "words": 455
+ },
+ {
+   "topic": "Social grants",
+   "date": "2012-02-09",
+   "words": 6
+ },
+ {
+   "topic": "Social security",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Transport",
+   "date": "2012-02-09",
+   "words": 135
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2012-02-09",
+   "words": 283
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2012-02-09",
+   "words": 0
+ },
+ {
+   "topic": "Africa",
+   "date": "2013-02-14",
+   "words": 302
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2013-02-14",
+   "words": 27
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2013-02-14",
+   "words": 44
+ },
+ {
+   "topic": "Corruption",
+   "date": "2013-02-14",
+   "words": 268
+ },
+ {
+   "topic": "Crime",
+   "date": "2013-02-14",
+   "words": 44
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2013-02-14",
+   "words": 44
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Education",
+   "date": "2013-02-14",
+   "words": 486
+ },
+ {
+   "topic": "Elections",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2013-02-14",
+   "words": 174
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2013-02-14",
+   "words": 59
+ },
+ {
+   "topic": "Health",
+   "date": "2013-02-14",
+   "words": 311
+ },
+ {
+   "topic": "Housing",
+   "date": "2013-02-14",
+   "words": 148
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2013-02-14",
+   "words": 102
+ },
+ {
+   "topic": "Inequality",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2013-02-14",
+   "words": 799
+ },
+ {
+   "topic": "Innovation",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2013-02-14",
+   "words": 178
+ },
+ {
+   "topic": "Jobs",
+   "date": "2013-02-14",
+   "words": 99
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2013-02-14",
+   "words": 556
+ },
+ {
+   "topic": "Local government",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Mandela",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2013-02-14",
+   "words": 256
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Police service",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2013-02-14",
+   "words": 322
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2013-02-14",
+   "words": 57
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "SAA",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Small business development",
+   "date": "2013-02-14",
+   "words": 59
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2013-02-14",
+   "words": 213
+ },
+ {
+   "topic": "Social grants",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Social security",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2013-02-14",
+   "words": 112
+ },
+ {
+   "topic": "Tourism",
+   "date": "2013-02-14",
+   "words": 35
+ },
+ {
+   "topic": "Transport",
+   "date": "2013-02-14",
+   "words": 236
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2013-02-14",
+   "words": 116
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2013-02-14",
+   "words": 314
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2013-02-14",
+   "words": 81
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2013-02-14",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2013-02-14",
+   "words": 180
+ },
+ {
+   "topic": "Africa",
+   "date": "2014-02-13",
+   "words": 156
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2014-02-13",
+   "words": 77
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2014-02-13",
+   "words": 41
+ },
+ {
+   "topic": "Corruption",
+   "date": "2014-02-13",
+   "words": 233
+ },
+ {
+   "topic": "Crime",
+   "date": "2014-02-13",
+   "words": 161
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2014-02-13",
+   "words": 88
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2014-02-13",
+   "words": 212
+ },
+ {
+   "topic": "Education",
+   "date": "2014-02-13",
+   "words": 372
+ },
+ {
+   "topic": "Elections",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2014-02-13",
+   "words": 109
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2014-02-13",
+   "words": 38
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2014-02-13",
+   "words": 36
+ },
+ {
+   "topic": "Health",
+   "date": "2014-02-13",
+   "words": 252
+ },
+ {
+   "topic": "Housing",
+   "date": "2014-02-13",
+   "words": 90
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2014-02-13",
+   "words": 224
+ },
+ {
+   "topic": "Inequality",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2014-02-13",
+   "words": 321
+ },
+ {
+   "topic": "Innovation",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2014-02-13",
+   "words": 119
+ },
+ {
+   "topic": "Jobs",
+   "date": "2014-02-13",
+   "words": 179
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2014-02-13",
+   "words": 161
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2014-02-13",
+   "words": 100
+ },
+ {
+   "topic": "Local government",
+   "date": "2014-02-13",
+   "words": 100
+ },
+ {
+   "topic": "Mandela",
+   "date": "2014-02-13",
+   "words": 74
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2014-02-13",
+   "words": 206
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Police service",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2014-02-13",
+   "words": 423
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2014-02-13",
+   "words": 82
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2014-02-13",
+   "words": 80
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2014-02-13",
+   "words": 82
+ },
+ {
+   "topic": "SAA",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2014-02-13",
+   "words": 178
+ },
+ {
+   "topic": "Small business development",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2014-02-13",
+   "words": 304
+ },
+ {
+   "topic": "Social grants",
+   "date": "2014-02-13",
+   "words": 99
+ },
+ {
+   "topic": "Social security",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2014-02-13",
+   "words": 40
+ },
+ {
+   "topic": "Transport",
+   "date": "2014-02-13",
+   "words": 151
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2014-02-13",
+   "words": 85
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2014-02-13",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2014-02-13",
+   "words": 80
+ },
+ {
+   "topic": "Africa",
+   "date": "2014-06-17",
+   "words": 231
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2014-06-17",
+   "words": 165
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2014-06-17",
+   "words": 41
+ },
+ {
+   "topic": "Corruption",
+   "date": "2014-06-17",
+   "words": 166
+ },
+ {
+   "topic": "Crime",
+   "date": "2014-06-17",
+   "words": 44
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2014-06-17",
+   "words": 47
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2014-06-17",
+   "words": 214
+ },
+ {
+   "topic": "Education",
+   "date": "2014-06-17",
+   "words": 218
+ },
+ {
+   "topic": "Elections",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2014-06-17",
+   "words": 515
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2014-06-17",
+   "words": 49
+ },
+ {
+   "topic": "Health",
+   "date": "2014-06-17",
+   "words": 81
+ },
+ {
+   "topic": "Housing",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2014-06-17",
+   "words": 157
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2014-06-17",
+   "words": 117
+ },
+ {
+   "topic": "Inequality",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2014-06-17",
+   "words": 217
+ },
+ {
+   "topic": "Innovation",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2014-06-17",
+   "words": 41
+ },
+ {
+   "topic": "Jobs",
+   "date": "2014-06-17",
+   "words": 140
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2014-06-17",
+   "words": 56
+ },
+ {
+   "topic": "Local government",
+   "date": "2014-06-17",
+   "words": 539
+ },
+ {
+   "topic": "Mandela",
+   "date": "2014-06-17",
+   "words": 47
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Mining",
+   "date": "2014-06-17",
+   "words": 226
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2014-06-17",
+   "words": 56
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2014-06-17",
+   "words": 108
+ },
+ {
+   "topic": "Police service",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2014-06-17",
+   "words": 23
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2014-06-17",
+   "words": 72
+ },
+ {
+   "topic": "SAA",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2014-06-17",
+   "words": 205
+ },
+ {
+   "topic": "Small business development",
+   "date": "2014-06-17",
+   "words": 34
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2014-06-17",
+   "words": 264
+ },
+ {
+   "topic": "Social grants",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Social security",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2014-06-17",
+   "words": 40
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2014-06-17",
+   "words": 84
+ },
+ {
+   "topic": "Transport",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2014-06-17",
+   "words": 120
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2014-06-17",
+   "words": 141
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2014-06-17",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2014-06-17",
+   "words": 108
+ },
+ {
+   "topic": "Africa",
+   "date": "2015-02-12",
+   "words": 91
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2015-02-12",
+   "words": 28
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2015-02-12",
+   "words": 80
+ },
+ {
+   "topic": "Corruption",
+   "date": "2015-02-12",
+   "words": 121
+ },
+ {
+   "topic": "Crime",
+   "date": "2015-02-12",
+   "words": 139
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2015-02-12",
+   "words": 199
+ },
+ {
+   "topic": "Education",
+   "date": "2015-02-12",
+   "words": 135
+ },
+ {
+   "topic": "Elections",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2015-02-12",
+   "words": 823
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2015-02-12",
+   "words": 31
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Health",
+   "date": "2015-02-12",
+   "words": 124
+ },
+ {
+   "topic": "Housing",
+   "date": "2015-02-12",
+   "words": 95
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2015-02-12",
+   "words": 49
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2015-02-12",
+   "words": 183
+ },
+ {
+   "topic": "Inequality",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2015-02-12",
+   "words": 436
+ },
+ {
+   "topic": "Innovation",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2015-02-12",
+   "words": 173
+ },
+ {
+   "topic": "Jobs",
+   "date": "2015-02-12",
+   "words": 150
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2015-02-12",
+   "words": 188
+ },
+ {
+   "topic": "Local government",
+   "date": "2015-02-12",
+   "words": 43
+ },
+ {
+   "topic": "Mandela",
+   "date": "2015-02-12",
+   "words": 85
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2015-02-12",
+   "words": 60
+ },
+ {
+   "topic": "Mining",
+   "date": "2015-02-12",
+   "words": 349
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2015-02-12",
+   "words": 18
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2015-02-12",
+   "words": 112
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2015-02-12",
+   "words": 34
+ },
+ {
+   "topic": "Police service",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Poverty",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2015-02-12",
+   "words": 56
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Racism",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2015-02-12",
+   "words": 43
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2015-02-12",
+   "words": 201
+ },
+ {
+   "topic": "SAA",
+   "date": "2015-02-12",
+   "words": 64
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Small business development",
+   "date": "2015-02-12",
+   "words": 27
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2015-02-12",
+   "words": 41
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2015-02-12",
+   "words": 276
+ },
+ {
+   "topic": "Social grants",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Social security",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Strikes",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Transport",
+   "date": "2015-02-12",
+   "words": 54
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2015-02-12",
+   "words": 16
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2015-02-12",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2015-02-12",
+   "words": 173
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2015-02-12",
+   "words": 99
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2015-02-12",
+   "words": 113
+ },
+ {
+   "topic": "Africa",
+   "date": "2016-02-11",
+   "words": 101
+ },
+ {
+   "topic": "Banking sector",
+   "date": "2016-02-11",
+   "words": 170
+ },
+ {
+   "topic": "Black economic empowerment",
+   "date": "2016-02-11",
+   "words": 66
+ },
+ {
+   "topic": "Communications technology/prices",
+   "date": "2016-02-11",
+   "words": 49
+ },
+ {
+   "topic": "Corruption",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Crime",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Democratic institutions",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Development finance insitutions",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Economic recession",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Economic recovery/growth",
+   "date": "2016-02-11",
+   "words": 592
+ },
+ {
+   "topic": "Education",
+   "date": "2016-02-11",
+   "words": 67
+ },
+ {
+   "topic": "Elections",
+   "date": "2016-02-11",
+   "words": 74
+ },
+ {
+   "topic": "Electricity supply/energy security",
+   "date": "2016-02-11",
+   "words": 231
+ },
+ {
+   "topic": "Environment/climate change",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Gender equality",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Health",
+   "date": "2016-02-11",
+   "words": 177
+ },
+ {
+   "topic": "Housing",
+   "date": "2016-02-11",
+   "words": null
+ },
+ {
+   "topic": "Incentives for investment",
+   "date": "2016-02-11",
+   "words": 132
+ },
+ {
+   "topic": "Incentives/support for industry",
+   "date": "2016-02-11",
+   "words": 94
+ },
+ {
+   "topic": "Inequality",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Infrastructure development",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Innovation",
+   "date": "2016-02-11",
+   "words": 32
+ },
+ {
+   "topic": "International relations (outside Africa)",
+   "date": "2016-02-11",
+   "words": 179
+ },
+ {
+   "topic": "Jobs",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Judicial system",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Labour broking",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Land reform/restitution",
+   "date": "2016-02-11",
+   "words": 149
+ },
+ {
+   "topic": "Local government",
+   "date": "2016-02-11",
+   "words": 115
+ },
+ {
+   "topic": "Mandela",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Migration/visas/borders",
+   "date": "2016-02-11",
+   "words": 50
+ },
+ {
+   "topic": "Mining",
+   "date": "2016-02-11",
+   "words": 133
+ },
+ {
+   "topic": "National minimum wage",
+   "date": "2016-02-11",
+   "words": 66
+ },
+ {
+   "topic": "National Social Security Fund",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Operation Phakisa",
+   "date": "2016-02-11",
+   "words": 200
+ },
+ {
+   "topic": "People with disabilities",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Police service",
+   "date": "2016-02-11",
+   "words": 73
+ },
+ {
+   "topic": "Poverty",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Protests/violence",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Public service performance monitoring",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Public service spending cuts",
+   "date": "2016-02-11",
+   "words": 301
+ },
+ {
+   "topic": "Racism",
+   "date": "2016-02-11",
+   "words": 149
+ },
+ {
+   "topic": "Rhino poaching",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Rural development/agriculture",
+   "date": "2016-02-11",
+   "words": 88
+ },
+ {
+   "topic": "SAA",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Service delivery",
+   "date": "2016-02-11",
+   "words": 175
+ },
+ {
+   "topic": "Small business development",
+   "date": "2016-02-11",
+   "words": 40
+ },
+ {
+   "topic": "Smart IDs",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Social cohesion/nation building",
+   "date": "2016-02-11",
+   "words": 146
+ },
+ {
+   "topic": "Social grants",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Social security",
+   "date": "2016-02-11",
+   "words": 25
+ },
+ {
+   "topic": "State-owned enterprises",
+   "date": "2016-02-11",
+   "words": 314
+ },
+ {
+   "topic": "Strikes",
+   "date": "2016-02-11",
+   "words": 31
+ },
+ {
+   "topic": "Tax Amendment Act",
+   "date": "2016-02-11",
+   "words": 39
+ },
+ {
+   "topic": "Tax policy",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Tourism",
+   "date": "2016-02-11",
+   "words": 42
+ },
+ {
+   "topic": "Transport",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Urbanisation",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Violence against women and children",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Water/sanitation",
+   "date": "2016-02-11",
+   "words": 172
+ },
+ {
+   "topic": "Workers' rights",
+   "date": "2016-02-11",
+   "words": 0
+ },
+ {
+   "topic": "Youth development/employment",
+   "date": "2016-02-11",
+   "words": 0
+ }
+]

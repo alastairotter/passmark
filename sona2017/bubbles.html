@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href=".css">
+    <script src="lib/d3.v3.min.js"></script>
+    <script src="sona.json"></script>
+</head>
+<body>
+
+
+<script>
+    var diameter = 500,
+        height = 400//max size of the bubbles
+    color    = d3.scale.category20b(); //color category
+
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter,height])
+    .padding(1.5);
+
+var svg = d3.select("body")
+    .append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble")
+    .style("opacity", 0.5)
+
+//d3.csv("fruit.csv", function(error, data){
+    var originalData = data; 
+    var dates = ['2009-06-03','2010-02-11','2011-02-10','2012-02-09','2013-02-14','2014-02-13','2014-06-17','2015-02-12','2016-02-11'];
+    data = data.filter( function (d) { 
+            return d.date === dates[0];
+        })
+
+    //convert numerical values from strings to numbers
+    data = data.map(function(d){ d.value = +d["words"]; return d; });
+
+    //bubbles needs very specific format, convert data to this.
+    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
+
+    //setup the chart
+    var bubbles = svg.append("g")
+        .attr("transform", "translate(0,0)")
+        .selectAll(".bubble")
+        .data(nodes)
+        .enter();
+
+    //create the bubbles
+    bubbles.append("circle")
+        .attr("r", function(d){ return d.r; })
+        .attr("cx", function(d){ return d.x; })
+        .attr("cy", function(d){ return d.y; })
+        .style("fill", function(d) { return color(d.value); });
+
+    //format the text for each bubble
+//    bubbles.append("text")
+//        .attr("x", function(d){ return d.x; })
+//        .attr("y", function(d){ return d.y + 5; })
+//        .attr("text-anchor", "middle")
+//        .text(function(d){ return d["topic"]; })
+//        .style({
+//            "fill":"black", 
+//            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+//            "font-size": "12px"
+//        });
+//})
+    
+    
+    setTimeout(function () { 
+    
+         var dates = ['2009-06-03','2010-02-11','2011-02-10','2012-02-09','2013-02-14','2014-02-13','2014-06-17','2015-02-12','2016-02-11'];
+    data = originalData.filter( function (d) { 
+            return d.date === dates[2];
+        })
+    
+    console.log(data);
+
+    //convert numerical values from strings to numbers
+    data = data.map(function(d){ d.value = +d["words"]; return d; });
+
+    //bubbles needs very specific format, convert data to this.
+    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
+        
+        
+        var bubbles = svg.selectAll("circle")
+        .data(nodes)
+        
+        
+        bubbles.transition()    
+            .duration(1000)
+            .attr("r", function(d){ return d.r; })
+        .attr("cx", function(d){ return d.x; })
+        .attr("cy", function(d){ return d.y; })
+     
+
+            
+       console.log("done") 
+
+        
+    }, 3000)
+    
+    </script>
+
+
+
+</body>
+</html>

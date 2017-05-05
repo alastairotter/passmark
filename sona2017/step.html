@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+    
+    <script src="lib/d3.v4.min.js"></script>
+    
+    <style>
+        body  { 
+            margin:0;
+            
+        }
+        
+        .labels { 
+            font-family: "Roboto Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 80%;
+        }
+        .date { 
+            font-family: "Roboto Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 150%;
+            font-weight: 700;
+            color: #fff;
+            fill: #000;
+            opacity: 1;
+            text-anchor: middle;
+
+        }
+        
+        .date-picker { 
+            width: 100%;
+            
+            margin-top: 1%;
+            text-align: center;
+            
+            font-family: "Roboto Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 130%;
+            
+        }
+        .toptitle {
+            margin-top: 5%;
+            
+            font-family: "Roboto Condensed", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 150%;
+            width: 100%; 
+            text-align: center;
+            
+        }
+        .year { 
+            background: #fff;
+            padding: 5px 10px;
+            
+            border-radius: 5px;
+            border: solid 1px #eee;
+            
+        }
+        .arrow { 
+           
+        }
+        
+        .switcher { 
+            font-size: 70%;
+            line-height: 200%;
+           
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    
+    <div class="toptitle">The top SONA topics: 3 June 2009</div>
+    
+    
+
+
+<div class="date-picker">
+   <span class="arrow back"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+    <span class="switcher">switch years</span>
+    <span class="arrow forward"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+    
+    
+</div>
+
+<script>
+    
+    var curyear = 0;
+    
+    
+    
+    var dates = ['2009-06-03','2010-02-11','2011-02-10','2012-02-09','2013-02-14','2014-02-13','2014-06-17','2015-02-12','2016-02-11','2017-02-09'];
+        var humanDates = ['3 June 2009', '11 February 2010', '10 February 2011', '9 February 2012','14 February 2013', '13 February 2014', '17 June 2014', '12 February 2015', '11 February 2016','9 February 2017' ];
+    
+    var labelCount = 4;
+    
+    var margin = { left: 30, right: 30, top: 30, bottom: 30 };
+    var width = window.innerWidth - margin.left - margin.right - 4,
+        height = window.innerHeight - margin.top - margin.bottom - 4; 
+    
+    var svg = d3.select("body")
+        .append("svg")
+//        .attr("width", width + margin.left + margin.right)
+        .attr("width", width)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    
+//    var year = svg.append("text")
+//            .text("The top SONA topics: 3 June 2009")
+//            .attr("class", "date")
+//            .attr("x", width/2)
+//            .attr("y", 0)
+    
+    
+    var x = d3.scaleLinear()
+            .range([0,width]);
+    
+    var run = function () { 
+        
+        
+        d3.csv("sona_new.csv", function (data) { 
+            
+            
+            
+        
+        
+        
+        data.forEach( function (d) { 
+            d.Words = + d.Words;
+        })
+        
+        var thisYear = data.filter( function (d) { return d.Year === dates[0]; })
+        
+        
+       
+        var total = thisYear.filter( function (d) { return d.Topic === "Total"; });
+        thisYear = thisYear.filter( function(d) { return d.Topic !== "Total"; })
+        
+        var max = d3.max(thisYear, function (d) { return d.Words; })
+        
+        var topWords =[];
+        thisYear.forEach( function (d) { 
+            topWords.push(d.Words);
+        })
+        
+        var topNums = function (a,b){ 
+            return a - b;
+        }
+        topWords.sort(topNums);
+        topWords.splice(0, topWords.length - labelCount);
+        
+      
+        
+       
+        total = total[0].Words;
+        
+        x.domain([0, 5622 + 200]);
+        
+        var xPos = x(5622 - total)/2,
+            prevC = 0; 
+        
+        var line = svg.append("line")
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr("y1", height/3)
+            .attr("y2", height/3)
+            .style("stroke", "#d1d1d1")
+            .style("stroke-width", 1)
+            .style("fill", "#000")
+            .style("stroke-dasharray", "5,5")
+        
+        var bubbles = svg.selectAll(".bubbles")
+            .data(thisYear)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) { 
+                xPos = xPos + prevC + x(d.Words/2);
+                prevC = x(d.Words/2);
+                return xPos;
+            })
+            .attr("cy", height/3)
+            .attr("r", function (d) { 
+                return x(d.Words/2);
+            })
+            .style("fill", "crimson")   
+            .style("opacity","0.5")
+            .attr("class", "bubbles")
+        
+        // LABELS
+        
+        var xPos = x(5622 - total)/2,
+            prevC = 0; 
+        var vertPos = "top";
+        
+        var labels = svg.selectAll(".labels")
+            .data(thisYear)
+            .enter()
+            .append("text")
+            .text( function (d) { 
+                if(d.Words >= topWords[0]) { 
+                    return d.Topic; 
+                }
+            })
+            .attr("fill", "#000")
+            .attr("stroke", "none")
+            .attr("x", function (d, i) { 
+
+                    xPos = xPos + prevC + x(d.Words/2);
+                    prevC = x(d.Words/2);
+                    return xPos;             
+            })
+            .attr("y", function (d) { 
+                if(d.Words >= topWords[0]){ 
+                    if(vertPos === "top") { 
+                       vertPos = "bottom";
+                       return height/3 - x(d.Words/2) - 10;
+                    }
+                    else { 
+                      vertPos = "top";
+                      return height/3 + x(d.Words/2) + 20;
+                      }
+                }
+                    
+                
+                
+                    
+                })
+            .style("text-anchor", "middle")
+            .attr("class", "labels")
+            
+        
+        
+        var switchBubbles = function (counter) { 
+            
+            d3.select(".toptitle")
+                .transition()
+                .duration(500)
+                .style("opacity", 0)
+                .transition()
+                .delay(500)
+                .text("The top SONA topics: " + humanDates[counter])
+                .style("opacity", 1)
+            
+            
+            
+            var thisYear = data.filter( function (d) { return d.Year === dates[counter]; })
+        
+            var total = thisYear.filter( function (d) { return d.Topic === "Total"; });
+            thisYear = thisYear.filter( function(d) { return d.Topic !== "Total"; })
+            
+            var max = d3.max(thisYear, function (d) { return d.Words; })
+            
+            var topWords = [];
+                 thisYear.forEach( function (d) { 
+                topWords.push(d.Words);
+            })
+            var topNums = function (a,b){ 
+                return a - b;
+            }
+            topWords.sort(topNums);
+            topWords.splice(0, topWords.length - labelCount);
+            console.log(topWords);
+            
+        
+            total = total[0].Words;
+            
+
+        
+            var xPos = x(5622 - total)/2,
+                prevC = 0; 
+            
+            
+            var bubbles = svg.selectAll(".bubbles")
+                .data(thisYear)
+            
+            bubbles.exit().remove();
+            
+            bubbles.enter()
+                .append("circle")
+            .attr("cx", function (d) { 
+                xPos = xPos + prevC + x(d.Words/2);
+                prevC = x(d.Words/2);
+                return xPos;
+            })
+            .attr("cy", height/3)
+//            .attr("r", function (d) { 
+//                return x(d.Words/2);
+//            })
+            .style("fill", "crimson")   
+            .style("opacity","0.5")
+            .attr("class", "bubbles")
+        
+            
+            bubbles.transition()
+//                .duration(1000)
+//                .attr("r", 5)
+                .transition()
+                .duration(2000)
+                .ease(d3.easeCubic)
+                .attr("r", function (d) { 
+                        return x(d.Words/2);
+                    })
+                .attr("cx", function (d) { 
+                    xPos = xPos + prevC + x(d.Words/2);
+                    prevC = x(d.Words/2);
+                    return xPos;
+                })
+                .attr("cy", height/3)
+                .style("fill", function (d) { 
+                     var curR = d3.select(this).attr("r");
+
+                    // shift x
+                    if(x(d.Words/3) > curR) { 
+                        return "dodgerblue";
+                    
+                    }
+                    else { 
+                        return "crimson";
+                    }
+                })
+            
+            
+            
+             var xPos = x(5622 - total)/2,
+            prevC = 0; 
+        var vertPos = "bottom";
+            
+            
+        
+            
+        var labels = svg.selectAll(".labels")
+            
+            
+            labels.data(thisYear)
+            .transition()
+            .duration(10)
+            .style("opacity", 0)
+                .text( function (d) { 
+                    if(d.Words >= topWords[0]) { 
+                        return d.Topic; 
+                    }
+                })
+            
+            .attr("x", function (d, i) { 
+                    xPos = xPos + prevC + x(d.Words/2);
+                    prevC = x(d.Words/2);
+                    return xPos;             
+            })
+            .attr("y", function (d) { 
+                if(d.Words >= topWords[0]) { 
+                    if(vertPos === "top") {
+                    vertPos = "bottom";
+                    return height/3 - x(d.Words/2) - 10;
+                }
+                else { 
+                    vertPos = "top";
+                    return height/3 + x(d.Words/2) + 20;
+                
+                }
+                }
+                else { return height/3 + x(d.Words/2) + 20; }
+            })
+            .style("text-anchor", "middle")
+            .attr("class", "labels")
+            .transition()
+            .delay(500)
+            .duration(500)
+            .style("opacity", 1)
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
+            
+        
+        }
+        
+        
+        
+    d3.select(".forward").on("click", function () {
+        curyear = curyear + 1;
+        if(curyear <= 9) {
+            
+           
+        switchBubbles(curyear);
+        }
+        else { 
+            curyear = 9;
+        }
+        if(curyear === 9) { 
+            d3.select(".forward").style("opacity", 0.1)
+            }
+        if(curyear < 9) {  d3.select(".forward").style("opacity", 1); }
+        if(curyear > 0) {  d3.select(".back").style("opacity", 1); }
+    })
+    
+    d3.select(".back").on("click", function () {
+        curyear = curyear - 1;
+        if(curyear >= 0) {
+            
+        switchBubbles(curyear);
+        }
+        else { 
+            curyear = 0;
+        }
+        if(curyear === 0) { 
+            d3.select(".back").style("opacity", 0.1)
+            }
+        
+        if(curyear < 9) {  d3.select(".forward").style("opacity", 1); }
+        if(curyear > 0) {  d3.select(".back").style("opacity", 1); }
+    })
+        
+        
+        
+//        setTimeout(function () { 
+//                switchBubbles(1);         
+//            }, 3000);
+//        
+//        
+//        setTimeout(function () { 
+//                switchBubbles(2);         
+//            }, 8000);
+//        
+//        
+//        setTimeout(function () { 
+//                switchBubbles(3);         
+//            }, 13000);
+//        
+//        
+//        setTimeout(function () { 
+//                switchBubbles(4);         
+//            }, 18000);
+//        
+//        setTimeout(function () { 
+//                switchBubbles(5);         
+//            }, 23000);
+//        
+//        
+//        setTimeout(function () { 
+//                switchBubbles(6);         
+//            }, 28000);
+//        
+//        
+//        setTimeout(function () { 
+//                switchBubbles(7);         
+//            }, 33000);
+//        
+//        
+//        setTimeout(function () { 
+//                switchBubbles(8);         
+//            }, 38000);
+//        
+//         setTimeout(function () { 
+//                switchBubbles(9);         
+//            }, 43000);
+//        
+    })
+    
+    
+    
+    } // END OF FUNCTION
+    
+    run();
+    
+    
+   
+//    
+    
+    
+    
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>State of the Nation 2017 focus on Education</title>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+
+    
+    <style>
+        
+/*
+        html { 
+          background: url(zumaparly2.jpg) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+*/
+        
+        body { 
+            
+            margin: 0;
+            font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 90%;
+            line-height: 140%;
+            
+        }
+        .headline { 
+            font-size:250%;
+            width: 90%; 
+            text-align: center; 
+            font-weight: 700;
+            line-height: 130%;
+            margin-top: 1%;
+            margin-bottom: 2%;
+            padding: 0 5%;
+        }
+        
+        .container { 
+            width: 94%; 
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .bubble { 
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 90%; 
+            line-height: 140%;
+            width: 100%;
+/*            height: 200px;*/
+            width: 100%;
+/*            overflow-y: scroll;*/
+       
+            border-radius: 10px;
+            margin-bottom: 0.5%;
+/*            padding: 3%;*/
+/*            margin-left: 5%;*/
+            border: solid 1px #eee;
+            min-height: 25px;
+            
+           
+            
+        }
+        
+        .bubble-content { 
+            width: 94%; 
+            padding: 1% 3%;
+            
+/*
+            max-height: 250px;
+            overflow-y: scroll;
+*/
+        }
+        
+        .year { 
+            width: 100%; 
+            font-size: 160%;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2%;
+            margin-top:2%;
+            margin-left: 0%;
+            margin-right: 5%;
+        }
+        .title { 
+            width: 94%;
+            font-weight: bold;
+            font-size: 140%;
+            text-align: center;
+/*            margin-bottom: 10px;*/
+/*            margin-top: 10px;*/
+            background: #a3cce2;
+            padding: 1% 3%;
+            color: #fff;
+           -webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+            
+        }
+        
+        .title:hover { 
+            cursor: pointer; cursor: hand;
+        }
+        
+        .triangle {
+        
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 25px 50px 50px 0;
+border-color: transparent #dbdbdb transparent transparent;
+
+            position: absolute; 
+            
+            z-index: -99; 
+            margin-top: 40px;
+            display: none;
+            
+            
+        }
+        
+        .quote { 
+            font-size: 500%;
+            float: left;
+            color: gray;
+            margin-top: 4%;
+            
+        }
+        
+        table {
+            width:100%; 
+            margin-bottom: 20px;
+            
+        }
+        td { 
+            width: 30%;
+            border: solid 1px #eee;
+            padding: 1%;
+            
+        }
+        
+        .header-row td { 
+            background: #eee;
+            font-weight: 700;
+        }
+        .date-row { 
+            font-weight: 700;
+        }
+        
+        .restart { 
+            width: 100%; 
+            text-align: center; 
+            
+            
+        }
+        
+        .restart a { 
+            text-decoration: none;
+            color: gray;
+        }
+        
+        .restart a:hover { 
+            color: #000;
+            cursor: pointer; cursor: hand;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="headline">A good year for education in the State of the Nation address</div>
+
+<p>Education received a lot of attention in this year’s State of the Nation Address (Sona). Last year, during the throes of the #Feesmustfall protests over university tuition fees, President Jacob Zuma had surprisingly little to say about education – a total of 67 words, the least he has said about the subject in any of his 10 Sonas. </p>
+
+<p>This year he appears to have decided to make up for it, by dedicating more of his speech to education that he ever has before. Much of it described how “our caring government responded appropriately [to the #Feesmustfall protests] by taking over the responsibility to pay the fee increase for the 2016 academic year”, among other things. </p>
+
+    <p>Passmark has made a visualisation showing what Zuma has spoken about in his Sonas since he became president in 2009. The size of the bubbles represents the number of words dedicated to each topic. Blue represents an increase from the previous year and red means the number decreased or stayed the same. Note the big blue bubble for education in 2017, representing over 600 words, about 11% of the total speech.</p>
+    
+    </div>
+
+    <p>
+        <iframe id="bubble-chart" style="width: 100%; min-height: 400px;" frameborder="0" src="start.html"></iframe>
+        
+        
+    </p>
+    <p><div class="restart">
+       <p><a onClick="restart();">Restart animation</a>
+    </div></p>
+
+<div class="container">
+    
+    
+    <h3>School infrastructure</h3>
+<p>It wasn't all about #Feesmustfall, primary and secondary education also got a look in this year. The president stated that a total of 173 inappropriate structures (those made of mud, wood, metal or asbestos) had been eradicated since 2011. </p>
+
+<p>These inappropriate structures relate to the <a href="http://www.gov.za/sites/www.gov.za/files/37081_rg10067_gon920.pdf">school infrastructure norms and standards regulations</a>, which set a deadline for the eradication of inappropriate structures of 29 November 2016.</p> 
+    
+<p>Six hundred and ninety nine inappropriate school structures had been identified by May 2015 and, according to the department of basic education, 217 of  those schools <a href="http://www.education.gov.za/Newsroom/MediaRelease/tabid/347/ctl/Details/mid/3963/ItemID/4172/Default.aspx">“had been completed” by September 2016</a> – which is about a third of the inappropriate structures. So the deadline has been missed fairly convincingly, even if some of those schools are likely to be closed or merged because of their small size.</p>
+
+<p>The 173 schools Zuma mentioned in his speech refer only to the of schools built through the <a href="http://www.education.gov.za/Home/ASIDI/tabid/613/Default.aspx">Accelerated Schools Infrastructure Delivery Initiative (Asidi)</a>, which is run by the Department of Basic Education (DBE) and funded by the Schools Infrastructure Backlog Grant. </p>
+
+<p>The provincial education departments are also responsible for building and maintaining school infrastructure, with funds received through the Education Infrastructure Grant (EIG) and the equitable share. The president did not mention the number of inappropriate schools replaced by the provinces.</p>
+
+    <h3>New schools</h3>
+<p>Zuma also said that a total of 895 new schools had been built – although he didn’t say since when. In 2016 the president claimed in a speech that 795 schools had been built since 2009, a number fact-checking organisation <a href="https://africacheck.org/reports/where-are-the-receipts-for-795-schools-zuma-says-sa-government-built/">Africa Check </a>was unable to verify. The DBE’s annual report states that 100 new schools were built in the 2015/2016 financial year, so add those 100 to the 795 and this could be where the 895 in the Sona come from.</p>
+ 
+<p>Digging through the DBE’s annual reports from 2011/2012 to 2015/2016, Passmark found that 428 schools had been built with EIG money. The DBE’s website claims 173 schools were built through the Asidi programme, which is a total of 601 (see table).  This means 294 schools would have to have been built between 2009 and 2011.</p>
+
+<table>
+    <tr class="header-row"><td>Year</td><td>Schools built, acc to DBE annual reports</td><td>Asidi schools built,
+    Acc to DBE website</td></tr>
+    
+    <tr><td class="date-row">2015/2016</td><td>
+        100</td><td></td></tr>
+
+
+<tr><td class="date-row">2014/2015</td><td>
+    121</td><td></td></tr>
+
+
+<tr><td class="date-row">2013/2014</td><td>
+98</td><td></td></tr>
+
+
+    <tr><td class="date-row">2012/2013</td><td>
+60</td><td></td></tr>
+
+
+<tr><td class="date-row">2011/2012</td><td>
+49</td><td></td></tr>
+
+
+<tr><td class="date-row">Total</td><td class="date-row">
+428</td><td class="date-row">
+    173</td></tr>
+
+    </table>
+
+
+<h3>Maths and science</h3>
+    <p>The president also celebrated South Africa’s results in the 2015 Trends in International Mathematics and Science Study <a href="http://www.gov.za/speeches/timss-2015-results-29-nov-2016-0000">(TIMMS)</a>, which did improve, but in maths, for example, the improvement took us from <a href="https://www.businesslive.co.za/bd/national/education/2016-11-29-dismal-show-for-sa-schools-in-international-maths-and-science-study/">last place to second last place</a> among 36 countries.</p> 
+
+    <p>The president clearly decided not to dwell on the negative.</p>
+    
+    <p>Read more: <a href="http://datablog.mediahack.co.za/2017/02/13/10-state-of-the-nation-addresses-this-is-what-president-zuma-has-spoken-about-the-most"> Here's what President Zuma has spoken about the most in his 10 SONAs</a></p>
+    
+
+<h3>You can read everything Zuma has ever said on the subject of education in his SONAs in the infographic below.</h3>
+
+
+    <p style="font-weight: 700;" >Click on a topic below to see what the presidents said about each issue. </p>
+
+
+
+
+<div class="year">
+2017
+    </div>
+
+<div class="bubble bubble1">
+ 
+  <div class="title">New schools</div>
+  <div class="bubble-content bubble1-content">
+<p> 
+      We continue to build modern schools replacing mud structures and other inappropriate buildings through the Accelerated Schools Infrastructure delivery Initiative, (ASIDI). This gives our children dignity.</p>
+   
+<p> A total of 173 inappropriate structures have been eradicated since 2011. In total, 895 new schools now provide a conducive learning environment for our children.</p>
+
+    </div> 
+</div>
+
+
+<div class="bubble bubble2">
+  <div class="title">Maths and science</div>
+  <div class="bubble-content bubble2-content">
+   
+  <p> President OR Tambo was a maths and science teacher. Government will thus prioritise maths and science more than ever before this year, in his memory.</p>
+<p> We are encouraged by recent international test results.</p>
+<p> The results in the Trends in International Mathematics and Science Study and the Southern and East African Consortium for Monitoring Educational Quality show that the performance of South African learners is improving.</p>
+<p> Amongst the participating countries, South Africa has shown the largest improvement of 87 points in Mathematics and 90 points in Science.</p>   
+<p> This is very encouraging as we don’t want our children to be left behind.</p>
+      
+      <p>Read about how education is the subject Zuma has spoken about the most in his 10 SONAs</p>
+    </div>
+</div>
+
+
+<div class="bubble bubble3">
+  <div class="title">#Feesmustfall</div>
+  <div class="bubble-content bubble3-content">
+   
+   <p> In December 2015 university students voiced their concerns about the cost of higher education.</p>
+<p> They correctly pointed out that accumulated debt and fast rising fees were making it harder and harder for those who come from less-privileged households to enter and stay within the education system until they complete their studies.</p>
+<p> It is for this reason that when university students expressed genuine concerns about  being excluded from universities, our caring government responded appropriately by taking over the responsibility to pay the fee increase for the 2016 academic year.</p>
+<p> Government also settled all debt owed by NSFAS students and extended the coverage to larger numbers of students than ever before.</p>
+<p> At the time of tabling the 2016 Medium Term Budget Policy Statement, our government announced additional measures aimed at making higher education accessible to more students from working class families.</p>
+<p> Government has provided funds to ensure that no student whose combined family income is up to six hundred thousand rand per annum will face fee increases at universities and TVET colleges for 2017.</p>
+<p> All students who qualify for NSFAS and who have been accepted by universities and TVET colleges will be funded. </p>
+<p> The university debt of NSFAS qualifying students for 2013, 2014 and 2015 academic years has been addressed. </p>
+<p> In total, government has reprioritised thirty two billion rand within government baselines to support higher education. We are ensuring that our deserving students can study without fearing that past debts will prevent them from finishing their studies.</p>
+<p> In the remaining years of this administration, our policies will respond directly to the following concerns that the students have placed firmly on the table:</p>
+<p> Firstly, the students have expressed concern that the NSFAS threshold of R122,000 is too low. We will have to look into this matter with the view to raising the threshold on a phased basis in the period ahead.</p>
+<p> Secondly, the students have pointed out that the full cost of study at some universities is higher than the subsidy that NSFAS provides. As a result, NSFAS students who study at some universities that charge higher fees end up accumulating debt. Our government-initiated processes are already looking at this issue too.</p>
+<p> Students and their parents should understand that the needs for services like water, sanitation, early childhood development and good public transport have to also be addressed, alongside access to quality higher education and training. But our commitment to finding sustainable solutions to the funding of the social wage in general, and education, in particular, is unwavering.</p>
+<p> As the processes that we have set in motion draw to a close, such as the Heher Commission, the Ministerial Task Team, broader engagements with students, university and TVETS leadership and civil society, we will find resources to give expression to our policies.</p>
+    </div>
+    
+</div>
+    <div class="year">2016</div>
+
+<div class="bubble bubble4">
+  <div class="title">#Feesmustfall</div>
+  <div class="bubble-content bubble4-content">
+   
+<p> Government has responded to the financial shortfall arising from the zero per cent university fee increase, as agreed in meeting with students and vice-chancellors last year.</p>
+<p> The Minister of Finance will provide the details of education shortfall funding in the Budget speech.</p>
+<p> I have appointed a Judicial Commission of Inquiry into higher education. We urge all stakeholders to cooperate with the Commission and help ensure its success.</p>
+
+    </div> 
+</div>
+
+<div class="year">2015</div>
+
+<div class="bubble bubble5">
+  <div class="title">School infrastructure</div>
+  <div class="bubble-content bubble5-content">
+   
+<p> We will also continue to improve the infrastructure in schools and higher education institutions to create a conducive environment for learning and teaching.</p>
+
+<p>Through the Accelerated School Infrastructure Delivery Initiative which is part of the National Infrastructure Plan, 92 new schools have been completed to date and 108 are under construction. About 342 schools have received water for the first time.</p>
+
+<p>Three hundred and fifty one (351) schools have received decent sanitation while 288 have been connected to electricity.</p>
+</p>
+
+    </div>
+</div>
+
+<div class="bubble bubble6">
+  <div class="title">New colleges and universities</div>
+  <div class="bubble-content bubble6-content">
+   
+<p> Government has identified 16 sites for the construction of 12 new technical and vocational education and training college campuses and the refurbishment of two existing campuses.</p>
+
+<p>Work is also continuing to establish the three brand new universities, Sol Plaatjie in the Northern Cape, the University of Mpumalanga and the Sefako Makgatho Allied and Health Sciences University.”</p>
+    </div>
+    
+</div>
+<div class="year">June 2014</div>
+
+
+
+<div class="bubble bubble7">
+  <div class="title">Education and economic growth</div>
+  <div class="bubble-content bubble7-content">
+   
+<p> We will continue to invest in education and skills development as that is the key to economic growth and development. We need engineers, electricians, plumbers, doctors, teachers and many other professionals to build our country’s economy.</p>
+
+<p>Education therefore remains an apex priority for this government. We will continue to promote universal access to education by ensuring that all children between ages 7 and 15 are in school.</p>
+
+<p>We will increase the number of Grade 12 learners who can gain entrance to university, moving from 172 000 in 2013 to 250 000 in 2019.</p>
+    </div> 
+</div>
+
+
+<div class="bubble bubble8">
+  <div class="title">New schools</div>
+  <div class="bubble-content bubble8-content">
+   
+<p>We opened at least one new school a week in the Eastern Cape last year and will continue to eradicate mud schools and other inappropriate structures. </p>
+    </div>
+    
+</div>
+
+<div class="bubble bubble9">
+  <div class="title">Tertiary education</div>
+  <div class="bubble-content bubble9-content">
+   
+<p> The number of young people in universities and colleges has increased over the years.  Contractors will move on site in September to build new universities in the Northern Cape and Mpumalanga.</p>
+
+<p>By January next year, the first intake of medical students will be enrolled at the new medical university in Limpopo.</p>
+
+<p>In addition, 12 training and vocational education colleges will be built to expand the technical skills mix in the country.</p>
+
+<p>Together we must continue to fight drugs and substance abuse in our schools and communities. We will also prioritise safety in schools, scholar transport and child health. </p>
+    </div>
+    
+</div>
+
+<div class="year">February 2014</div>
+
+<div class="bubble bubble10">
+  <div class="title">Learner enrolment numbers</div>
+  <div class="bubble-content bubble10-content">
+   
+<p> Education is a ladder out of poverty for millions of our people. We are happy therefore that there is a huge increase in the enrolment of children in school, from pre-primary to tertiary level.</p>
+
+<p> The number of children attending Grade R has more than doubled, moving from about 300,000 to more than 700,000 between 2003 and 2011.</p>
+
+<p>A Draft Policy Framework towards Universal Access to Grade R has been gazetted for public comment, with a view to making Grade R compulsory.</p>
+
+<p>Eight million learners are attending no-fee schools, whereas nine million learners are getting nutritious meals at school, which are provided by government to ensure that they do not suffer from starvation and that enables them to perform well. </p>
+
+    </div> 
+</div>
+
+<div class="bubble bubble11">
+  <div class="title">Matric pass rate and assessments</div>
+  <div class="bubble-content bubble11-content">
+ 
+   
+<p> The matric pass rate has gone up from around 61% in 2009 to 78% last year and the bachelor passes improve each year.</p>
+
+<p>Through the Annual National Assessments, we keep track of improvements and interventions needed, especially, in maths and science.</p>
+ </p>
+    </div>
+    
+</div>
+
+
+<div class="bubble bubble12">
+  <div class="title">Curriculum</div>
+  <div class="bubble-content bubble12-content">
+   
+<p> To promote inclusivity and diversity, the South African Sign Language curriculum will be offered in schools from next year, 2015.</p>
+
+    </div>
+    
+</div>
+
+<div class="bubble bubble13">
+  <div class="title">Adult literacy</div>
+  <div class="bubble-content bubble13-content">
+   
+<p> We have increased our numbers of literate adults through the Kha Ri Gude programme from 2,2 million in 2008 to 3 million people.</p>
+
+    </div>
+    
+</div>
+
+<div class="bubble bubble14">
+  <div class="title">Teacher training</div>
+   <div class="bubble-content bubble14-content">
+   
+<p> We have also been investing in teacher training and are re-opening teacher training colleges to meet the demand.</p>
+    </div>
+
+    
+</div>
+
+<div class="bubble bubble15">
+  <div class="title">New schools</div>
+  <div class="bubble-content bubble15-content">
+   
+<p> To produce a decent learning environment, we have delivered 370 new schools replacing mud schools and other unsuitable structures around the country. The programme continues.</p>
+    </div>
+
+    
+</div>
+
+<div class="bubble bubble16">
+  <div class="title">Tertiary education</div>
+  <div class="bubble-content bubble16-content">
+   
+<p> Student enrolments at universities increased by 12% while further Education and Training college enrolments have increased by 90%.</p>
+
+<p> We have increased the budgets of the National Student Financial Aid Scheme to R9-billion rand to meet the rising demand.</p>
+
+<p>Another major achievement of this term has been the establishment of two brand new universities, Sol Plaatje in the Northern Cape and the University of Mpumalanga.</p>
+
+<p>We will also build 12 new FET Colleges in Limpopo, Mpumalanga, KwaZulu-Natal and Eastern Cape.</p>
+
+
+    </div>
+</div>
+
+    <div class="year">2013</div>
+
+<div class="bubble bubble17">
+  <div class="title">Matric & other school assessments</div>
+  <div class="bubble-content bubble17-content">
+   
+<p> On education, we are pleased that the Grade 12 pass rate is finally on an upward trend. We congratulate the Class of 2012, their teachers, parents and communities for the continued improvement.</p>
+
+<p>We congratulate the top province for 2012, Gauteng, and top grade 12 learner, Miss Madikgetho Komane, from Sekhukhune district, Limpopo, who is our special guest. </p>
+
+<p>The Annual National Assessments in our schools, have become a powerful tool of assessing the health of our education system.</p>
+
+<p>We welcome the improvement each year in the ANA results, but more must be done to improve maths, science and technology.</p>
+
+<p> The Department of Basic Education will establish a national task team to strengthen the implementation of the Mathematics, Science and Technology Strategy.</p>
+
+<p> We urge the private sector to partner government through establishing, adopting or sponsoring maths and science academies or Saturday schools.</p>
+
+<p> We are pleased with the growth of our early childhood education programmes, including Grade R. </p>
+    </div>
+    
+</div>
+
+<div class="bubble bubble18">
+  <div class="title">Life-long learning</div>
+  <div class="bubble-content bubble18-content">
+   
+<p> We are also pleased with our adult education programme, Khari Gude, which has reached more than 2.2-million people between 2008 and 2011.</p>
+
+<p>We also continue to encourage people from all walks never to stop learning.  Many were inspired when accomplished musician and my special guest, Mr Sipho Hotstix Mabuse obtained his matric last year, at the age of 60.</p>
+
+<p>We declared education as an apex priority in 2009. We want to see everyone in the country realising that education is an essential service for our nation.</p>
+
+    </div>
+</div>
+
+<div class="bubble bubble19">
+  <div class="title">Teachers</div>
+  <div class="bubble-content bubble19-content">
+   
+<p> By saying education is an essential service we are not taking away the Constitutional rights of teachers as workers such as the right to strike. It means we want the education sector and society as a whole to take education more seriously than is happening currently.</p>
+
+<p>All successful societies have one thing in common – they invested in education. Decent salaries and conditions of service will play an important role in attracting, motivating and retaining skilled teachers.</p>
+
+<p>In this regard, we will establish a Presidential Remuneration Commission which will investigate the appropriateness of the remuneration and conditions of service provided by the State to all its employees. I have directed that the first priority should be teachers. The Commission will also assess the return on investment.</p>
+
+<p>In elevating education to its rightful place, we want to see an improvement in the quality of learning and teaching and the management of schools. We want to see an improvement in attitudes, posture and outcomes.</p>
+
+<p>Working with educators, parents, the community and various stakeholders, we will be able to turn our schools into centres of excellence.
+</p>
+
+    </div>
+</div>
+
+    <div class="year">2012</div>
+
+<div class="bubble bubble20">
+  <div class="title">Measures of success</div>
+  <div class="bubble-content bubble20-content">
+   
+<p> Our intensive focus on education is paying off. We are pleased that the matric percentage pass is on an upward trend. We congratulate the teachers, learners, parents and the communities for the efforts.</p>
+
+<p>We will continue to invest in producing more teachers who can teach mathematics, science and African languages.</p>
+
+<p>Our call to teachers to be in school, in class, on time, teaching for at least seven hours a day remains pivotal to success. We thank the teacher unions for supporting this campaign.</p>
+
+<p>A major achievement is the doubling of Grade R enrolment, from 300,000 in 2003 to 705,000 in 2011. We appear poised to meet our target of 100% coverage for Grade R by 2014.</p>
+
+<p>To fight poverty and inequality and to keep learners in school, over 8-million learners attend no-fee schools while over 8-million benefit from government’s school feeding scheme.
+ </p>
+    </div>
+    
+</div>
+
+<div class="bubble bubble21">
+  <div class="title">Failure to deliver</div>
+  <div class="bubble-content bubble21-content">
+  
+   
+<p> Last year, national government instituted a Section 100 (1)(b) intervention in the Eastern Cape, to assist the department of education to improve the delivery of education.</p>
+
+<p>Problems included non-delivery of textbooks, non-payment of scholar transport, excess teachers and a general poor culture of learning and teaching.</p>
+
+<p>The implementation of the intervention will continue and we are working well with the province in this regard. We are also keen to improve the education situation in the Eastern Cape. We call on all stakeholders to work with us to make this turnaround a success.</p>
+    </div>
+    
+</div>
+
+<div class="bubble bubble22">
+  <div class="title">School drop-outs</div>
+  <div class="bubble-content bubble22-content">
+   
+<p> During the 2010 FIFA Soccer World Cup, we resolved that the South African legacy would be to  promote  universal access to education.</p>
+
+<p>School attendance in the country is now close to 100 percent for the compulsory band, 7-15 years of age. But we remain concerned by the report of the General Household Survey in 2010 that just over 120 000 children in that band are out of school.</p>
+
+<p>Grade 10 drop outs appear to be a problem, particularly in the rural and farm areas of the Western Cape.</p>
+
+<p>The national Government will work closely with the Western Cape government, to trace these learners and provide support so that they do not lose their future.
+</p>
+    </div>
+    
+</div>
+
+<div class="bubble bubble23">
+  <div class="title">Tertiary education</div>
+  <div class="bubble-content bubble23-content">
+   
+<p> With regards to higher education, we are exceeding targets. Close to 14 000 learners were placed in workplace learning opportunities over the past year, and over 11 000 artisans have completed their trade tests.</p>
+
+<p>We are pleased to see that there is a growing number of young people who are learning skills through Further Education and Training colleges.</p>
+
+<p>We are pleading to you parents to encourage children to study at these colleges. They should not think that training can only be obtained from universities. We also need skills that are obtained from these colleges.</p>
+
+<p>To expand access to tertiary education as per our announcement last year, 200 million rand was utilised to assist 25 000 students to pay off their debts to institutions of higher learning.</p>
+    </div>
+    
+</div>
+
+    <div class="year">2011</div>
+
+<div class="bubble bubble24">
+  <div class="title">Teachers, textbooks & time</div>
+  <div class="bubble-content bubble24-content">
+   
+<p>We are making a difference in education, as evidenced by the significant increase in the matric pass rate last year, and the interest displayed by the youth in education around the country.</p>
+
+<p>The focus in basic education this year is Triple T: Teachers, Textbooks and Time. We reiterate our call that teachers must be at school, in class, on time, teaching for at least seven hours a day.</p>
+
+<p>The administration must ensure that every child has a textbook on time, and that we assist our teachers to create the right working environment for quality teaching to take place.</p>
+
+<p>To track progress, this year, we began the annual national assessments in literacy and numeracy that are internationally benchmarked, for grades 3, 6 and 9.</p>
+
+<p>We will continue investing in teacher training, especially in mathematics and science.</p>
+
+<p>We will pay special attention to the training of principals, particularly those in underperforming schools. </p>
+
+    </div>
+</div>
+
+<div class="bubble bubble25">
+  <div class="title">Tertiary education</div>
+  <div class="bubble-content bubble25-content">
+   
+<p>The focus of higher education will be to expand access especially for children of the poor. This includes the conversion of loans into bursaries for qualifying final year students.</p>
+
+<p>Students in Further Education and Training Colleges who qualify for financial aid will be exempted from paying fees.</p>
+
+    </div>
+</div>
+
+    <div class="year">2010</div>
+
+<div class="bubble bubble26">
+  <div class="title">In school, in class, on time</div>
+  <div class="bubble-content bubble26-content">
+   
+<p>We have placed education and skills development at the centre of this government’s policies. In our 2010 programme, we want to improve the ability of our children to read, write and count in the foundation years. Unless we do this, we will not improve the quality of education. </p>
+
+<p>Our education targets are simple but critical. We want learners and teachers to be in school, in class, on time, learning and teaching for seven hours a day.</p>
+
+<p>We will assist teachers by providing detailed daily lesson plans. To students, we will provide easy-to-use workbooks in all 11 languages. From this year onwards, all grade 3, 6 and 9 students will write literacy and numeracy tests that are independently moderated.</p>
+
+<p>We aim to increase the pass rate for these tests from the current average of between 35 and 40% to at least 60% by 2014. Results will be sent to parents to track progress.</p>
+
+<p>In addition, each of our 27 000 schools will be assessed by officials from the Department of Basic Education. This will be recorded in an auditable written report. We aim to increase the number of matric students who are eligible for university admission to 175 000 a year by 2014. We urge parents to cooperate with us in making this a success.</p>
+
+<p>We welcome last month’s statement by the three teacher unions, NAPTOSA, SADTU and SAOU, reaffirming their commitment to the Quality Learning and Teaching Campaign from the beginning of 2010.</p>
+
+<p>We need to invest in our youth to ensure a skilled and capable workforce to support growth and job creation.</p>
+    </div>
+    
+</div>
+
+<div class="bubble bubble27">
+  <div class="title">Further education and training</div>
+  <div class="bubble-content bubble27-content">
+   
+<p>We need to invest in our youth to ensure a skilled and capable workforce to support growth and job creation. We therefore plan to increase the training of 16-25 year olds in further education and training facilities. This will enable us to provide a second chance at education, for those who do not qualify for university.</p>
+
+<p>We are working with higher education institutions to ensure that eligible students obtain financial assistance, through the National Student Financial Aid Scheme.
+We have also set ambitious targets for skills development, to produce additional engineers and technicians, and to increase the number of qualified Mathematics and Science teachers. </p>
+
+<p>We must also increase the number of youth who enter learnerships in the privateand public sectors.
+</p>
+    </div>
+    
+</div>
+
+    <div class="year">2009</div>
+
+<div class="bubble bubble28">
+  <div class="title">In school, in class, on time</div>
+  <div class="bubble-content bubble28-content">
+   
+<p>Education will be a key priority for the next five years. We want our teachers, learners and parents to work with government to turn our schools into thriving centres of excellence.</p>
+
+<p>The Early Childhood Development programme will be stepped up, with the aim of ensuring universal access to Grade R and doubling the number of 0¬4 year old (sic) children by 2014.</p>
+
+<p> We reiterate our non¬ negotiables. Teachers should be in school, in class, on time, teaching, with no neglect of duty and no abuse of pupils! The children should be in class, on time, learning, be respectful of their teachers and each other, and do their homework.</p>
+    </div>
+</div>
+
+<div class="bubble bubble29">
+<div class="title">School management</div>
+<div class="bubble-content bubble29-content">
+
+<p>To improve school management, formal training will be a pre¬condition for promoting teachers to become principals or heads of department.</p>
+
+<p>I will meet school principals to share our vision on the revival of our education system. </p>
+
+<p>We will increase our efforts to encourage all pupils to complete their secondary education.</p>
+    </div>
+</div>
+
+<div class="bubble bubble30">
+<div class="title">Reduce number of drop-outs</div>
+<div class="bubble-content bubble30-content">
+
+<p>The target is to increase enrolment rates in secondary schools to 95 per cent by 2014. We are also looking at innovative measures to bring back into the system pupils who dropped out of school, and to provide support.</p>
+
+<p>We are very concerned about reports of teachers who sexually harass and abuse children, particularly girls. We will ensure that the Guidelines on Sexual Harassment and Violence in Public Schools are widely disseminated, and that learners and teachers are familiar with and observe them.</p>
+
+<p>We will take very serious, and very decisive, action against any teachers who abuse their authority and power by entering into sexual relationships with children.</p>
+    </div>
+</div>
+
+<div class="bubble bubble31">
+<div class="title">Life-long learning</div>
+<div class="bubble-content bubble31-content">
+
+<p>To promote lifelong learning, the Adult Basic Education and Training Kha ri Gude programme will be intensified.</p>
+
+<p>We have to ensure that training and skills development initiatives in the country respond to the requirements of the economy.</p>
+
+<p>The Further Education and Training sector with its 50 colleges and 160 campuses nationally will be the primary site for skills development training.</p>
+
+<p>We will improve the access to higher education of children from poor families and ensure a sustainable funding structure for universities.</p>
+    </div>
+</div>
+
+<p>(See our methodology <a href="https://drive.google.com/open?id=0BwAgLlsa442HMnBIaFBJR0FrLXc" target="_blank">here</a>.)</p>
+
+</div>
+
+
+<script>
+var pymChild = new pym.Child();
+</script>
+
+
+<script> 
+    $("document").ready( function () { 
+        
+        $(".bubble-content").slideUp();
+        
+        
+            
+            $(".bubble1").click( function () { 
+                $(".bubble1-content").slideToggle();
+            })
+            
+            $(".bubble2").click( function () { 
+                $(".bubble2-content").slideToggle();
+            })
+            
+            $(".bubble3").click( function () { 
+                $(".bubble3-content").slideToggle();
+            })
+            
+            
+            $(".bubble4").click( function () { 
+                $(".bubble4-content").slideToggle();
+            })
+            
+            $(".bubble5").click( function () { 
+                $(".bubble5-content").slideToggle();
+            })
+            
+            $(".bubble6").click( function () { 
+                $(".bubble6-content").slideToggle();
+            })
+            
+            $(".bubble7").click( function () { 
+                $(".bubble7-content").slideToggle();
+            })
+            
+            $(".bubble8").click( function () { 
+                $(".bubble8-content").slideToggle();
+            })
+            
+            $(".bubble9").click( function () { 
+                $(".bubble9-content").slideToggle();
+            })
+            
+            $(".bubble10").click( function () { 
+                $(".bubble10-content").slideToggle();
+            })
+            
+            $(".bubble11").click( function () { 
+                $(".bubble11-content").slideToggle();
+            })
+            
+            $(".bubble12").click( function () { 
+                $(".bubble12-content").slideToggle();
+            })
+            
+            $(".bubble13").click( function () { 
+                $(".bubble13-content").slideToggle();
+            })
+            
+            $(".bubble14").click( function () { 
+                $(".bubble14-content").slideToggle();
+            })
+            
+            $(".bubble15").click( function () { 
+                $(".bubble15-content").slideToggle();
+            })
+            
+            $(".bubble16").click( function () { 
+                $(".bubble16-content").slideToggle();
+            })
+            
+            $(".bubble17").click( function () { 
+                $(".bubble17-content").slideToggle();
+            })
+            
+            $(".bubble18").click( function () { 
+                $(".bubble18-content").slideToggle();
+            })
+            
+            $(".bubble19").click( function () { 
+                $(".bubble19-content").slideToggle();
+            })
+            
+            $(".bubble20").click( function () { 
+                $(".bubble20-content").slideToggle();
+            })
+            
+            $(".bubble21").click( function () { 
+                $(".bubble21-content").slideToggle();
+            })
+            
+            $(".bubble22").click( function () { 
+                $(".bubble22-content").slideToggle();
+            })
+            
+            $(".bubble23").click( function () { 
+                $(".bubble23-content").slideToggle();
+            })
+            
+            $(".bubble24").click( function () { 
+                $(".bubble24-content").slideToggle();
+            })
+            
+            $(".bubble25").click( function () { 
+                $(".bubble25-content").slideToggle();
+            })
+            
+            $(".bubble26").click( function () { 
+                $(".bubble26-content").slideToggle();
+            })
+            
+            $(".bubble27").click( function () { 
+                $(".bubble27-content").slideToggle();
+            })
+            
+            $(".bubble28").click( function () { 
+                $(".bubble28-content").slideToggle();
+            })
+            
+            $(".bubble29").click( function () { 
+                $(".bubble29-content").slideToggle();
+            })
+            
+            $(".bubble30").click( function () { 
+                $(".bubble30-content").slideToggle();
+            })
+            
+            $(".bubble31").click( function () { 
+                $(".bubble31-content").slideToggle();
+            })
+            
+            
+        
+        
+        
+    });
+    
+    var restart = function () { 
+        var iframe = document.getElementById("bubble-chart"); iframe.src = "start.html";
+    }
+
+</script>
+
+</body>
+</html>
