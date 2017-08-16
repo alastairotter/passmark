@@ -27,11 +27,22 @@
 
     <div class="nav-content"><a class="menu" href="http://passmark.org.za">Home</a>
       <a class="menu" href="about.html">About</a>
-      <a class="menu" style="margin-right: 0px;" href="issues.html">Issues</a>
+      <!-- <a class="menu" style="margin-right: 0px;" href="issues.html">Issues</a> -->
+      <div class="dropdown">
+        <div class="db">
+        Stories
+        </div>
+        <div class="dropdown-content">
+          <a href="howbig/">How big are South Africa's schools?</a>
+          <a href="sona2017">Education in the State of the Nation address</a>
+          <a href="asbestos">Hidden danger: asbestos in Gauteng's schools</a>
+
+
+        </div>
+      </div>
+
 
     </div>
-
-<!--<div class="logo"> Passmark <i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; </div>-->
 
 
 <div id="container">
@@ -115,7 +126,35 @@ Data-driven education journalism</div>
                 <span style="font-weight: 700;">Passmark</span> used the schools masterlist for the first quarter of 2016, the latest data available from the Department of Basic Education, to look at how big South Africa’s schools are.</p>
                 <p>Click on the image below to to view the full interactive graphic and article.</p>
 
-            <p><a href="howbig"><img style="width: 90%;" src="images/bigschools.gif"></a></p>
+            <p><a href="howbig"><img style="width: 90%; margin-left: 5%; margin-right: 5%;" src="images/bigschools.gif"></a></p>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    
+    
+    <div class="content">
+        <div class="content-inner">
+
+        <div class="headline">Hidden danger: asbestos in Gauteng's schools</div>
+
+            <p>South Africa's Department of Education adopted regulations in 2013 stipulating that all schools made of asbestos had to be replaced by 29 November 2016. The Gauteng education department (GDE), which is responsible for the province’s school infrastructure, identified 29 asbestos schools for replacement, but not one of them was replaced by the deadline.</p>
+
+            <p>What’s more, the 29 schools currently earmarked for replacement are just a small part of the problem. According to the GDE’s own information, there are more than 200 schools in the province with asbestos structures. But the list of asbestos schools keeps changing, and it is unclear if it is complete, and if the asbestos structures are in good condition.</p>
+
+            <p>Asbestos was banned in South Africa in 2008 because it is known to cause cancer.</p>
+            
+            <p>View the asbestos project <a style="color: dodgerblue;" href="http://passmark.org.za/asbestos">here</a>.</p>
+
+
+            <p><a href="http://passmark.org.za/asbestos"><img style="width: 90%; margin-left: 5%; margin-right: 5%;" src="images/asbestos.png"></a></p>
 
 
 
@@ -207,7 +246,11 @@ $(document).ready( function () {
     if(window.innerWidth <800) {
         $(document).ready( function () {
 
-             $
+             var ddown = $(".dropdown").position();
+             console.log(ddown.left);
+             $(".dropdown-content").css("margin-left", "-" + ddown.left + "px");
+
+             $(".dropdown-content").width(window.innerWidth);
 
             $(".splash").height(window.innerHeight - (window.innerHeight * 20 /100));
             $(".contacts").css("top", window.innerHeight - 30 + "px")

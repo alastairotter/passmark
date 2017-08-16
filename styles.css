@@ -1,4 +1,4 @@
-html { 
+html {
 /*  background: url(images/eastern_cape_school.jpg) no-repeat center center fixed; */
 /*
   -webkit-background-size: cover;
@@ -9,7 +9,7 @@ html {
     height:100%;
 }
 
-body { 
+body {
     margin: 0;
     font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: aliceblue;
@@ -21,20 +21,20 @@ body {
 a { color: #fff; text-decoration: none;}
 
 
-.resolution { 
-    position: absolute; 
+.resolution {
+    position: absolute;
     top: 10px;
     right: 10px;
     color: #fff;
     opacity: 0.5;
-    
+
 }
 
 
 
-.clear { 
-    width: 100%; 
-    
+.clear {
+    width: 100%;
+
     text-align: center;
 /*    background-attachment: fixed;*/
   background-position: center;
@@ -42,24 +42,24 @@ a { color: #fff; text-decoration: none;}
   background-size: cover;
 }
 
-.slide1, .slide2 { 
+.slide1, .slide2 {
 
 background-image: url("images/scaled_CapeTownSchool.jpg");
   min-height: 30%;
     padding-top: 50px;
     padding-bottom: 50px;
-    
+
 
 }
 
-.slide2 { 
+.slide2 {
     background-image: url("images/toilets.jpg");
 
 
 }
 
-.slide-content { 
-    width: 96%; 
+.slide-content {
+    width: 96%;
 /*    max-width: 700px;*/
     margin-top: 5%;
     margin-left: auto;
@@ -72,7 +72,7 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
      word-spacing: 5px;
 }
 
-.slide-content .fa { 
+.slide-content .fa {
     opacity: 0.7;
     font-size: 120%;
     color: #fff;
@@ -80,77 +80,77 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
 
 .slide-content .attrib {
     font-size: 50%;
-    font-weight: 400; 
+    font-weight: 400;
     text-transform: uppercase;
     opacity: 0.8;
     padding-top: 10px;
-    
+
 }
 
-.slide-content .bold { 
-    font-weight: 900; 
+.slide-content .bold {
+    font-weight: 900;
 }
 
-.blend { 
-    width: 100%; 
+.blend {
+    width: 100%;
     text-align: center;
 
-  
+
 }
 
-.content { 
+.content {
     width: 100%;
     background: #fff;
     padding-top: 5%;
 
-   
-    
+
+
 }
-.content-inner { 
+.content-inner {
     width: 96%;
-    max-width: 700px; 
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     color:gray;
-    
+
     font-size: 85%;
     line-height: 150%;
     padding-bottom: 50px;
-    
-    
-    
+
+
+
 }
 
-.splash{ 
+.splash{
     font-size: 150%;
     font-weight: 700;
     height: 500px;
     padding-top: 60%;
 /*    background: green;*/
-    background-image: url(images/scaled_schooldesks.jpg); 
+    background-image: url(images/scaled_schooldesks.jpg);
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 /*    background-attachment: fixed;*/
-  
+
 
 }
 
-.header { 
+.header {
     font-size: 150%;
     font-weight: 700;
     height: 500px;
     padding-top: 40%;
 /*    background: green;*/
-    background-image: url(images/eastern_cape_school.jpg); 
+    background-image: url(images/eastern_cape_school.jpg);
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
     height: 500px;
     }
 
-.contacts { 
-    position: absolute; 
+.contacts {
+    position: absolute;
     bottom: 50px;
     width: 100%;
     text-align: center;
@@ -158,9 +158,9 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
     font-size: 100%;
     font-weight: 300;
     color: #fff;
-    
+
 }
-.contacts .fa { 
+.contacts .fa {
 /*    opacity: 0.5;*/
 /*    margin-right: 20px;*/
 }
@@ -170,8 +170,8 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
 
 
 .headline {
-    
-    width: 100%; 
+
+    width: 100%;
     text-align: center;
     font-size: 150%;
     line-height: 120%;
@@ -183,8 +183,8 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
 
 
 .headline-second {
-    
-    width: 100%; 
+
+    width: 100%;
     text-align: center;
     font-size: 150%;
     line-height: 120%;
@@ -195,7 +195,7 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
 }
 
 
-.headline .fa { 
+.headline .fa {
     color: #eee;
 }
 
@@ -203,30 +203,30 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
 
 
 
-.slogan  { 
+.slogan  {
 /*    display: none;*/
     color: #fff;
     width: 96%;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-  
+
     font-weight: 300;
-    
+
     font-family: Lato, Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 100%;
     text-transform: uppercase;
     line-height: 130%;
     word-spacing: 5px;
-    
-    
-    
+
+
+
 }
 
-.slogan-bold { 
+.slogan-bold {
     font-weight: 900;
 }
-.nav { 
+.nav {
     position: absolute;
     top: 0px;
     opacity: 0.2;
@@ -239,38 +239,38 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
 
 }
 
-.container { 
+.container {
     height: 100%;
     padding: 0;
 }
 
-.nav-wrap { 
-    position: absolute; 
-    z-index: 200; 
-    width: 100%; 
+.nav-wrap {
+    position: absolute;
+    z-index: 200;
+    width: 100%;
     min-height:2%;
     padding-top: 10%;
     opacity: 1;
     background: #000;
     margin-top: -2px;
-    
-  
-    
-   
+
+
+
+
 }
-.nav-content { 
-    position: absolute; 
+.nav-content {
+    position: absolute;
     z-index: 201;
     color: #eee;
-    width: 100%; 
+    width: 100%;
     text-align: center;
     padding-top: 1%;
-    
-   
+
+
 
 }
 
-.toplogo { 
+.toplogo {
    background: #000;
     width: 100%;
     text-align: center;
@@ -278,35 +278,35 @@ background-image: url("images/scaled_CapeTownSchool.jpg");
     padding-bottom: 0%;
     font-size: 150%;
     font-weight: 900;
-    
+
 }
 
- .toplogo-desktop { 
-        position: absolute; 
+ .toplogo-desktop {
+        position: absolute;
         z-index: 300;
         left:5%;
         top: 4%;
-        color: #fff; 
-        font-size: 200%; 
+        color: #fff;
+        font-size: 200%;
         font-weight: 900;
         text-shadow: 1px 1px 12px rgba(116, 118, 116, 1);
          display: none;
     }
 
-a.menu { 
+a.menu {
     text-decoration: none;
     opacity: 0.7;
     margin-right: 5%;
 }
 
-a.menu:hover { 
+a.menu:hover {
     opacity: 1;
     text-shadow: 0px -1px 30px rgba(255, 255, 255, 1);
 }
 
-a.logo { 
+a.logo {
     font-weight: 400;
-    
+
     font-family: Lato, Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 110%;
 }
@@ -316,170 +316,241 @@ a.logo {
 
 
 
-.video { 
-    width: 96%; 
+.video {
+    width: 96%;
     margin-left: 0%;
     margin-right: 0%;
     text-align: left;
     padding: 0px;
-    
- 
+
+
 }
 
 
-.info { 
+.info {
     background: #000;
     color: #bcbcbc;
     font-size: 90%;
     padding: 5%;
     text-align: center;
-    
+
 }
 
-.info-content { 
-    width: 100%; 
+.info-content {
+    width: 100%;
     max-width: 200px;
     text-align: left;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     line-height: 200%;
 }
 
-.info-content .bold { 
+.info-content .bold {
     font-weight: 900;
 }
 
-.info-content .fa { 
+.info-content .fa {
     font-size:120%;
 }
 
-.info a { 
+.info a {
 
     color: #bcbcbc;
 }
 
-.info a:hover { 
+.info a:hover {
     color: #fff;
 }
 
-.newsletter-signup { 
+.newsletter-signup {
 /*    margin-top:10%;*/
-    width: 100%; 
+    width: 100%;
     max-width: 700px;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     margin-bottom: 5%;
- 
-   
-    
+
+
+
 }
-.taco { 
+.taco {
     margin-top: 50px;
 }
 
 
-    
-    
+/* DROPDOWN */
+.db {
+  padding: 10px 5px;
+  width: auto;
+  cursor: pointer;
+  width: 100%;
+  font-size: 95%;
+  opacity: 0.7;
+
+
+  color: #fff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+  margin-left: 30px;
+  background: #000;
+  color: #fff;
+  opacity: 1;
+  min-width: 300px;
+  width: 100%;
+  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+  z-index: 1;
+  padding: 10px 5px;
+  font-size: 90%;
+  text-align: left;
+}
+.dropdown-content a {
+display: block;
+padding:5px 0;
+float: left;
+color: gray;
+/*margin-left: -30px;*/
+
+text-decoration: none;
+color: #fff;
+}
+
+.dropdown-content a:hover {
+  color: dodgerblue;
+  text-shadow: 0px -1px 30px rgba(255, 255, 255, 1);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .db {
+  /*background: #000;*/
+  text-shadow: 0px -1px 30px rgba(255, 255, 255, 1);
+  color: #fff;
+  opacity: 1;
+
+
+}
+/* DROPDOWN */
+
+
+
+
 
 @media screen and (min-width: 400px) and (max-width: 800px) {
-    
-    .content-inner { 
+
+    .content-inner {
         max-width: 600px;
     }
-    
-    .slide1, .slide2 { 
+
+    .slide1, .slide2 {
         min-height: 300px;
     }
-    
-    .slide-content { 
+
+    .slide-content {
         max-width: 500px;
         font-size: 200%;
     }
-    
-    
-    
-    .splash { 
+
+
+
+    .splash {
         font-size: 300%;
         padding-top: 30%;
     }
-    
-    .headline { 
+
+    .headline {
         font-size: 220%;
     }
-    
-    .nav-wrap { 
+
+    .nav-wrap {
         padding-top: 10%;
     }
-    
-    .logotop { 
-        
+
+    .logotop {
+
+    }
+
+    .dropdown-content a {
+      margin-left: -30px;
     }
 }
 
 @media screen and (min-width: 801px) {
-    
-    .content-inner { 
+
+    .content-inner {
         max-width: 700px;
         font-size: 90%;
     }
-    .slide1, .slide2 { 
+    .slide1, .slide2 {
         min-height: 500px;
     }
-    
-    .slide-content { 
+
+    .slide-content {
         max-width: 600px;
         font-size: 250%;
         padding-top: 5%;
-        
+
     }
-    
-    .headline { 
+
+    .headline {
         font-size: 220%;
     }
-    
-    .splash { 
+
+    .splash {
         font-size: 300%;
         padding-top: 15%;
             background-attachment: fixed;
     }
-    
-    .clear { 
+
+    .clear {
             background-attachment: fixed;
     }
-    
+
     .content {
-        
+
         padding-top: 2%;
     }
-    
-    .nav-wrap { 
+
+    .nav-wrap {
         padding-top: 7%;
     }
-    
-    .nav-content { 
+
+    .nav-content {
         padding-top: 3%;
     }
-    
-    .toplogo { 
+
+    .toplogo {
         display: none;
     }
     .nav-wrap {
         opacity: 0.2;
     }
-    
-    .toplogo-desktop { 
+
+    .toplogo-desktop {
         display: block;
+    }
+
+    .dropdown-content a {
+      margin-left: -50px;
     }
 }
 
 
 /*
- @media screen and (min-width: 1500px) {  
-    
-    .content-inner { 
+ @media screen and (min-width: 1500px) {
+
+    .content-inner {
         font-size: 90%;
     }
-    
-    
+
+
 }
 */
