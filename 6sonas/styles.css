@@ -1,0 +1,531 @@
+body { 
+    font-family: "helvetica neue", arial, helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    /* background: #eee; */
+    
+
+    
+}
+
+* { 
+    margin: 0;
+}
+
+.head { 
+    font-family: georgia, serif;
+    font-size: 250%;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+   
+}
+
+.subhead { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 110%;
+    line-height: 150%;
+    margin-bottom: 5px;
+    width: 70%;
+    max-width: 500px;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    border-bottom: solid 1px lightgray;
+    font-style: italic;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  
+    
+}
+
+.intro { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    margin-bottom: 30px;
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto; 
+    margin-right: auto;
+    
+}
+
+.date { 
+    position: absolute;
+    padding: 5px;
+    font-size: 75%;
+    /* font-weight: bold; */
+    z-index: 400;
+    
+    background:rgb(224, 224, 224);
+    color: #000;
+
+    font-weight: 700;
+  
+}
+
+
+
+
+.mytooltip { 
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    border: solid 1px #eee;
+    /* border-radius: 5px; */
+    color: #000;
+    z-index: 300;
+    padding: 5px 10px;
+    font-size: 80%;
+    line-height: 120%;
+    display: none;
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.15);
+-moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.15);
+box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.15);
+max-width: 150px;
+}
+.mytooltip .highlight { 
+    font-weight: 700;
+}
+
+#chart { 
+    /* margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    margin-bottom: 200px; */
+    
+    
+}
+
+.chart { 
+    /* margin: 0; */
+}
+
+.chart-holder { 
+    /* border: solid 1px red;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    height: auto; */
+}
+
+#chart1, #chart2, #chart3, #chart4, #chart5, #chart6 { 
+    /* border: solid 1px #cecece; */
+    /* float: left; */
+    /* background: #fff; */
+    
+}
+
+.controls { 
+    position: relative; 
+    top: 15px;
+    font-size: 80%;
+    padding: 0 15px;
+    min-height: 20px;
+   
+}
+
+select:focus { 
+    outline: 0;
+}
+
+button:focus { 
+    outline: 0;
+    border: 0;
+}
+
+.legend { 
+    font-size: 80%;
+    /* background: yellow; */
+    padding: 5px 0px;
+    
+}
+
+.legend-color { 
+    width: 10px;
+    height: 10px;
+    background: #667AC1;
+    opacity: 0.6;
+    float: left;
+    margin-right: 5px;
+}
+.legend-title { 
+    /* text-transform: uppercase; */
+    color: #1c1c1c;
+}
+.legend-row { 
+    padding-top: 3px;
+    line-height: 110%;
+}
+
+
+
+
+
+
+.annotation-note-title, text.title {
+    font-weight: normal;
+    font-size: 80%;
+    text-anchor: end;
+  }
+
+  .annotation { 
+      font-size: 30%;
+      /* text-anchor: middle; */
+  }
+
+  text.title {
+    font-size: 1.2em;
+  }
+
+  text.annotation { 
+      stroke:none; 
+      font-weight: normal;
+      font-size: 70%;
+      shape-rendering: crispEdges;
+      pointer-events: none;
+      
+      
+
+  }
+
+
+
+
+  .more { 
+      font-size: 80%;
+      
+  }
+
+  .details { 
+      font-family: "georgia", serif;
+      padding: 7px;
+      font-size: 17px;
+      /* line-height: 120%; */
+      color: #000000;
+        height: auto;
+        display: none;
+        /* background: #eee; */
+  }
+
+  .detailsholder { 
+    width: 100%; 
+    margin: 0%; 
+}
+
+.chart-box {
+   border: none;
+   opacity: 0;
+   /* height: 300px; */
+   /* -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.36);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.36);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.36); */
+} 
+
+  .sona2 { 
+      /* display: none; */
+  }
+
+  .reset { 
+      opacity: 0.2;
+      font-size: 65%;
+      /* color: #AE0055; */
+  }
+
+  .form-control-xs { 
+      font-size: 80%; 
+      padding: 10px 0px !important;
+  }
+
+  select { 
+      border: solid 1px #eee;
+      outline: solid 1px #eee;
+      font-size: 60%;
+      padding: 50px;
+      color: #AE0055;
+      /* color: gray; */
+      
+  }
+
+  .buttons { 
+      width: 100%; 
+      text-align: center;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      margin-right: auto;
+      margin-left: auto;
+      
+  }
+
+  .jz { 
+      background: #AE0055;
+      color: #fff;
+  }
+
+  .cr { 
+      background: lightgray;
+  }
+
+  .help { 
+      font-size: 120%;
+      margin-top: 8px;
+      padding-left: 5px;
+      display: inline;
+      color: lightgray;
+  }
+
+  button:focus {  outline-color: #A75000 }
+
+  #wrap { 
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    opacity: 0;
+}
+
+.chartholder { 
+    width: 96%;
+    margin: 2%;
+    border: solid 1px #a5a5a5;
+    background: #fff;
+}
+.topics { 
+    min-height: 40px;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.btn .notes { 
+    min-width: 70px;
+}
+
+.moredetails {
+    text-align: right;
+    padding-right: 20px;
+    font-size: 80%;
+    margin-top: 5px;
+
+}
+
+.btn-secondary { 
+    /* margin-left: 7px; */
+}
+
+a.dropdown-item { 
+    font-size: 70%;
+}
+a.dropdown-item:hover { 
+    cursor: pointer; 
+    cursor: hand;
+}
+a.dropdown-item:active { 
+    background: #fff;
+}
+
+.btn-light { 
+    background: #AD0053;
+    border: none; 
+    outline: none;
+    color: #fff;
+}
+.btn-light:hover {
+    background: #AD0053; 
+    color: #fff;
+
+}
+.btn-light:active { 
+    background: #AD0053;
+}
+
+/* .btn-light:focus {
+    border: none; 
+    outline: none;
+    outline: 0; 
+    background: green;
+
+} */
+
+.btn-secondary { 
+    font-size: 70%;
+    font-weight: normal;
+    border: none; 
+    outline: none;
+    outline: 0; 
+    margin-left: 7px;
+}
+
+.btn-secondary.info { 
+    background: #AD0053;
+}
+
+.btn-secondary:focus { 
+    border: none; 
+    outline: none;
+    outline: 0; 
+
+}
+
+.reset-button { 
+    background: #AD0053;
+}
+
+.btn {
+    border: none; 
+    outline: none;
+    outline: 0; 
+    
+ }
+
+ .btn:active { 
+    border: none; 
+    outline: none;
+    outline: 0; 
+     
+ }
+
+ .btn:focus { 
+    border: none; 
+    outline: none;
+    outline: 0; 
+    border: 0;
+ }
+
+ .dropdown-menu { 
+     max-height: 200px;
+     overflow-y: scroll;
+ }
+
+ .annotations2 { 
+     opacity: 0;
+ }
+
+ .sticky { 
+    background-color: #fff;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+ }
+
+
+
+ .stuck {
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+   padding: 0;
+    z-index: 700;
+    background-color: #fff;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    border-bottom: 1px solid lightgray;
+    
+  }
+
+  .endnote { 
+      width: 100%; 
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-family: georgia, serif;
+      margin-bottom: 100px;
+      font-size: 90%;
+      line-height: 200%;
+      color: gray;
+
+
+  }
+
+  .endnote a { 
+      color: #AD0053;
+  }
+  .endnote a:hover { 
+      color: #000;
+  }
+  .credit { 
+      border-bottom: solid 1px gray;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      font-weight: 700;
+  }
+
+  .bylines { 
+      font-style: normal;
+      text-transform: uppercase; 
+      font-size: 70%;
+      margin-top: 30px;
+      color: gray;
+  }
+
+  .share { 
+      font-size: 190%;
+      margin-bottom: 30px;
+
+  }
+
+  .passmark { 
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding: 0;
+        text-align: center;
+        font-family: "open sans";
+        margin-top: 30px;
+        color: #afafaf;
+  }
+
+  .passmark a { 
+      color: #AD0053;
+      text-decoration: none;
+      font-weight: 600;
+      /* opacity: 0.8; */
+
+  }
+
+  .passmark a:hover { 
+      color: #AD0053;
+      opacity: 1;
+  }
+
+  button { 
+      cursor: pointer;
+      cursor: hand;
+  }
+
+.crosshead  { 
+      font-weight: 700;
+  }
+
+
+@media screen and (max-width: 600px) {
+
+    .head { 
+        font-size: 200%;
+        line-height: 120%;
+        margin-top: 30px;
+    }
+
+    .passmark { 
+        font-size: 80%;
+    }
+
+}
+
+
+
+
+
+

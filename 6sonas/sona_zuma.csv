@@ -1,0 +1,61 @@
+"topic","color","who","date","sona_id","words","slice","id","marker","align","label","annotation","h_offset","v_offset","label_h_offset","label_v_offset"
+"Agriculture/Rural development/Land redistribution",1,"zuma","2017-02-09","2017",490,30,1,285,"end","Agriculture, Rural Development & Land Redistibution","Agri/Rural/Land",-60,0,-5,0
+"Agriculture/Rural development/Land redistribution",1,"zuma","2016-02-11","2016",236,30,1,285,"start","Agriculture, Rural Development & Land Redistibution","Agri/Rural/Land",0,0,0,0
+"Agriculture/Rural development/Land redistribution",1,"zuma","2015-02-12","2015",389,30,1,285,"start","Agriculture, Rural Development & Land Redistibution","Agri/Rural/Land",0,0,0,0
+"Agriculture/Rural development/Land redistribution",1,"zuma","2014-06-17","2014_2",128,30,1,285,"start","Agriculture, Rural Development & Land Redistibution","Agri/Rural/Land",0,0,0,0
+"Agriculture/Rural development/Land redistribution",1,"zuma","2014-02-13","2014_1",182,30,1,285,"start","Agriculture, Rural Development & Land Redistibution","Agri/Rural/Land",0,0,0,0
+"Banking/financial sector",2,"zuma","2016-02-11","2016",164,30,2,315,"start","Banking & Financial Sector","Banking/Financial Sector",0,0,0,0
+"Black economic empowerment/Radical economic transformation",3,"zuma","2017-02-09","2017",853,30,3,315,"end","BEE & Radical Economic Transformation","BEE/Rad Econ Trans",-60,0,-5,0
+"Corruption",4,"zuma","2015-02-12","2015",119,30,4,315,"start","Corruption","Corruption",0,0,0,0
+"Corruption",4,"zuma","2014-06-17","2014_2",166,30,4,315,"start","Corruption","Corruption",0,0,0,0
+"Corruption",4,"zuma","2014-02-13","2014_1",276,30,4,315,"start","Corruption","Corruption",0,0,0,0
+"Crime",5,"zuma","2017-02-09","2017",295,30,5,345,"start","Crime","Crime",0,0,0,0
+"Crime",5,"zuma","2015-02-12","2015",110,30,5,345,"start","Crime","Crime",0,0,0,0
+"Economy/Economic policy",6,"zuma","2017-02-09","2017",251,30,6,15,"start","Economy & Economic Policy","Economy/Economic Policy",0,0,0,0
+"Economy/Economic policy",6,"zuma","2016-02-11","2016",821,30,6,345,"end","Economy & Economic Policy","Economy/Economic Policy",0,110,10,10
+"Economy/Economic policy",6,"zuma","2015-02-12","2015",401,30,6,15,"middle","Economy & Economic Policy","Economy/Economic Policy",0,-90,0,-5
+"Economy/Economic policy",6,"zuma","2014-06-17","2014_2",488,30,6,345,"end","Economy & Economic Policy","Economy/Economic Policy",0,-50,10,-5
+"Economy/Economic policy",6,"zuma","2014-02-13","2014_1",486,30,6,345,"end","Economy & Economic Policy","Economy/Economic Policy",0,130,10,10
+"Education",7,"zuma","2017-02-09","2017",624,30,7,45,"end","Education","Education",-60,30,-5,3
+"Education",7,"zuma","2015-02-12","2015",147,30,7,45,"start","Education","Education",0,0,0,0
+"Education",7,"zuma","2014-06-17","2014_2",218,30,7,15,"start","Education","Education",0,0,0,0
+"Education",7,"zuma","2014-02-13","2014_1",287,30,7,15,"start","Education","Education",0,0,0,0
+"Electricity supply/Energy security",8,"zuma","2016-02-11","2016",231,30,8,15,"start","Electricity Supply & Energy Security","Electricity/Energy Security",0,0,0,0
+"Electricity supply/Energy security",8,"zuma","2015-02-12","2015",843,30,8,75,"end","Electricity Supply & Energy Security","Electricity/Energy Security",-30,0,-3,0
+"Electricity supply/Energy security",8,"zuma","2014-06-17","2014_2",509,30,8,45,"end","Electricity Supply & Energy Security","Electricity/Energy Security",-70,0,-3,0
+"Govt/Public service performance",9,"zuma","2016-02-11","2016",301,30,9,45,"end","Government & Public Service","Govt/Public Service",-60,30,-5,3
+"Govt/Public service performance",9,"zuma","2014-06-17","2014_2",718,30,9,75,"end","Government & Public Service","Govt/Public Service",-40,0,-3,0
+"Health",10,"zuma","2017-02-09","2017",290,30,10,75,"start","Health","Health",0,0,0,0
+"Health",10,"zuma","2016-02-11","2016",175,30,10,75,"start","Health","Health",0,0,0,0
+"Health",10,"zuma","2014-02-13","2014_1",250,30,10,45,"start","Health","Health",0,0,0,0
+"Housing",11,"zuma","2017-02-09","2017",122,30,11,105,"start","Housing","Housing",0,0,0,0
+"Infrastructure development",12,"zuma","2014-02-13","2014_1",260,30,12,75,"start","Infrastructure development","Infrastructure development",0,0,0,0
+"International relations",13,"zuma","2014-06-17","2014_2",95,30,13,105,"start","International relations","International relations",0,0,0,0
+"International relations",13,"zuma","2014-02-13","2014_1",275,30,13,105,"start","International relations","International relations",0,0,0,0
+"International trade & investment",14,"zuma","2017-02-09","2017",373,30,14,135,"start","International Trade & Investment","International Trade/Investment",0,0,0,0
+"International trade & investment",14,"zuma","2016-02-11","2016",176,30,14,105,"start","International Trade & Investment","International Trade/Investment",0,0,0,0
+"International trade & investment",14,"zuma","2015-02-12","2015",144,30,14,105,"start","International Trade & Investment","International Trade/Investment",0,0,0,0
+"International trade & investment",14,"zuma","2014-06-17","2014_2",131,30,14,135,"start","International Trade & Investment","International Trade/Investment",0,0,0,0
+"Jobs",15,"zuma","2015-02-12","2015",298,30,15,135,"start","Jobs","Jobs",0,0,0,0
+"Jobs/Unemployment/Labour relations",16,"zuma","2017-02-09","2017",178,30,16,165,"start","Jobs, Unemployment & Labour Relations","Jobs/Labour Relations",0,0,0,0
+"Jobs/Unemployment/Labour relations",16,"zuma","2014-06-17","2014_2",279,30,16,165,"start","Jobs, Unemployment & Labour Relations","Jobs/Labour Relations",0,0,0,0
+"Jobs/Unemployment/Labour relations",16,"zuma","2014-02-13","2014_1",211,30,16,135,"start","Jobs, Unemployment & Labour Relations","Jobs/Labour Relations",0,0,0,0
+"Judicial system",17,"zuma","2014-02-13","2014_1",161,30,17,165,"start","Judicial system","Judicial system",0,0,0,0
+"Mining sector",18,"zuma","2017-02-09","2017",306,30,18,195,"start","Mining sector","Mining sector",0,0,0,0
+"Mining sector",18,"zuma","2015-02-12","2015",330,30,18,165,"start","Mining sector","Mining sector",0,0,0,0
+"Mining sector",18,"zuma","2014-06-17","2014_2",226,30,18,195,"start","Mining sector","Mining sector",0,0,0,0
+"Mining sector",18,"zuma","2014-02-13","2014_1",206,30,18,195,"start","Mining sector","Mining sector",0,0,0,0
+"Operation Phakisa",19,"zuma","2016-02-11","2016",200,30,19,135,"start","Operation Phakisa","Operation Phakisa",0,0,0,0
+"Operation Phakisa",19,"zuma","2015-02-12","2015",112,30,19,195,"start","Operation Phakisa","Operation Phakisa",0,0,0,0
+"People with disabilities",20,"zuma","2014-06-17","2014_2",108,30,20,225,"start","People with disabilities","People with disabilities",0,0,0,0
+"Protests/violence",21,"zuma","2014-02-13","2014_1",423,30,21,225,"start","Protests/violence","Protests/violence",70,-30,5,3
+"Racism",22,"zuma","2016-02-11","2016",149,30,22,165,"start","Racism","Racism",0,0,0,0
+"Science & technology",23,"zuma","2017-02-09","2017",132,30,23,225,"start","Science & technology","Science & technology",0,0,0,0
+"Social cohesion/Nation building",25,"zuma","2017-02-09","2017",180,30,25,255,"start","Nation building","Nation building",0,0,0,0
+"Social cohesion/Nation building",25,"zuma","2016-02-11","2016",146,30,25,195,"start","Nation building","Nation building",0,0,0,0
+"Social cohesion/Nation building",25,"zuma","2015-02-12","2015",424,30,25,225,"middle","Nation building","Nation building",0,-50,0,-5
+"Social cohesion/Nation building",25,"zuma","2014-06-17","2014_2",264,30,25,255,"start","Nation building","Nation building",0,0,0,0
+"Social cohesion/Nation building",25,"zuma","2014-02-13","2014_1",303,30,25,255,"start","Nation building","Nation building",50,-10,5,3
+"State-owned enterprises",26,"zuma","2016-02-11","2016",314,30,26,225,"middle","State-owned enterprises","State-owned enterprises",0,-50,0,-5
+"Water & sanitation",27,"zuma","2016-02-11","2016",172,30,27,255,"start","Water & Sanitation","Water & Sanitation",0,0,0,0
+"Water & sanitation",27,"zuma","2015-02-12","2015",199,30,27,255,"start","Water & Sanitation","Water & Sanitation",0,0,0,0

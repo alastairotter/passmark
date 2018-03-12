@@ -1,0 +1,536 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url"                content="http://passmark.org.za/asidi-schools" />
+        <meta property="og:type"               content="site" />
+        <meta property="og:title"              content="Slowly, slowly SA's unsafe schools are being replaced" />
+        <meta property="og:description"        content="The Accelerated Schools Infrastructure Development Iniative (ASIDI) was launched in 2011 with the aim of bringing basic services to schools. Now in its seventh year, 187 Asidi schools have been completed, 52% of the target – and that target has shrunk since 2013 to 363. This is where the Asidi schools are." />
+        <meta property="og:image"              content="http://passmark.org.za/images/asidi_schools.png"/>
+        <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@passmark" />
+<meta name="twitter:title" content="Slowly, slowly SA's unsafe schools are being replaced" />
+<meta name="twitter:description" content="The Accelerated Schools Infrastructure Development Iniative (ASIDI) was launched in 2011 with the aim of bringing basic services to schools. Now in its seventh year, 187 Asidi schools have been completed, 52% of the target – and that target has shrunk since 2013 to 363. This is where the Asidi schools are." />
+<meta name="twitter:image" content="http://passmark.org.za/images/asidi_schools.png" />
+    <title>Slowly SA's unsafe schools are being replaced</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Open+Sans:400,800" rel="stylesheet">
+
+
+
+    <script src="../lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles-inside.css">
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: "Open sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 70%;
+            color: #3d3d3d;
+        }
+
+        a {
+            color: dodgerblue;
+        }
+
+        #chart {
+            width: 800px;
+            height: 950px;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+
+
+
+        .explainer {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 400;
+
+            font-size: 110%;
+            font-weight: 700;
+            max-width: 200px;
+
+        }
+
+        .content_new {
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 130%;
+            line-height: 140%;
+            margin-top: 160px;
+            text-align: left;
+
+        }
+
+        .content_body { 
+            margin-top: 30px;
+        }
+
+        .highlight {
+            font-weight: 700;
+        }
+
+        .headline {
+            font-family: Lato, Arial, "Helvetica Neue", Helvetica, sans-serif;
+            width: 100%;
+            font-size: 300%;
+            font-weight: 700;
+            line-height: 130%;
+            text-align: center;
+            color: #000;
+        }
+
+        .crosshead {
+            font-family: "Slabo 27px", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 160%;
+            margin-top: 5%;
+            color: #000;
+        }
+
+        .labels {
+            stroke: none;
+            fill: #000;
+            font-size: 100%;
+
+
+        }
+
+        .show-schools {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+
+        .public-schools {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+
+        .header_chart {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            font-weight: 700;
+            font-size: 90%;
+            width: 100px;
+            text-align: right;
+        }
+
+
+        line {
+            shape-rendering: crispEdges;
+        }
+
+        g.all {
+            fill: #eee;
+            background: #eee;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 0px;
+            left: 500px;
+            z-index: 200;
+            opacity: 0;
+            padding: 5px;
+            background: #fff;
+            text-align: center;
+
+        }
+
+        .fa-spinner {
+            color: dodgerblue;
+        }
+
+        .loading {
+            position: absolute;
+            top: 0px;
+            width: 100px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .sub {
+            font-weight: 400;
+            color: gray;
+            font-size: 100%;
+        }
+
+        .leaflet-container {
+            background: #fff;
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            background: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100px;
+            background: #000;
+            padding-top: 2%;
+            font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 300%;
+            font-weight: 700;
+            color: #fff;
+            background-image: url("../images/scaled_schooldesks.jpg");
+            background-position: right bottom;
+            background-size: cover;
+
+            text-shadow: 1px 1px 26px rgba(0, 0, 0, 1);
+        }
+
+        .header a {
+            font-weight: 400;
+            color: #eee;
+
+
+        }
+
+        .header a:hover {
+            color: #fff;
+        }
+
+        .taco {
+            margin-top: 50px;
+        }
+
+        .collage {
+
+
+
+            margin-bottom: 50px;
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .collage.img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .caption {
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 120%;
+
+        }
+
+        .schools-table {
+            width: 100%;
+        }
+
+        .schools-table td {
+            padding: 3px;
+            font-size: 85%;
+            /*            border: solid 1px gray;*/
+            margin: 0;
+            background: #eee;
+        }
+
+        .schools-table th {
+            font-size: 90%;
+            /*
+            color: #fff;
+            background: #000;
+*/
+            padding: 3px;
+        }
+
+        .hover-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            border: solid 1px #eee;
+            border-radius: 5px;
+            z-index: 500;
+            padding: 3px 8px;
+        }
+        .notes { 
+            font-size: 90%;
+            color: gray;
+        }
+
+        .date { 
+            /* font-size: 90%; */
+            font-size: 120%;
+            color: gray; 
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="nav-wrap">
+    </div>
+
+
+
+    <div id="container">
+        <div class="header">
+            Passmark
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <div style="font-size: 40%; margin-top: 1%;">
+                <a href="http://passmark.org.za">Home &nbsp;
+                </a>
+                <a href="../about.html" style="margin-right: 0;">About</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="content_new">
+            <!--    Styles
+   headline
+   crosshead
+   highlight
+   -->
+            <div class="headline">Slowly, slowly South Africa’s unsafe schools are being replaced</div>
+
+        </div>
+
+
+
+       <div class="date">12 March, 2018</div>
+
+        <div class="content_new content_body">
+            <p>One of the things President Cyril Ramaphosa listed as an achievement in his 2018 State of the Nation address was that “at least 187” ASIDI schools have been completed by the Department of Basic Education.</p>
+
+            <p>The Accelerated Schools Infrastructure Development Iniative (<a href="https://www.education.gov.za/Home/ASIDI/tabid/613/Default.aspx">ASIDI</a>) was launched in 2011 with the aim of bringing basic services to schools that had no access to water, sanitation and electricity and to replace schools made of mud, wood and asbestos. An R8.2-billion grant, known as the Schools Infrastructure Backlog Grant (SIBG), was allocated to fund the work.</p> 
+
+            <p><strong>We built an <a href="../asidi_schools/">interactive map</a> with all of the completed Asidi schools. View it <a href="../asidi_schools/">here</a>.</strong></p>
+            
+            <p>Treasury Budget documents from 2011 state that the funds would be used to replace 395 mud schools, mainly in the Eastern Cape, provide water to 1 307 schools, sanitation to 536 schools and electricity to 1 434 schools, over the course of three years, after which the grant would be discontinued. </p>
+            
+            <p>Two years later, in a presentation to Parliament in February 2013, the target number of schools to be replaced had grown to 496, and, in fact, at one point the number was 510. The number of schools that needed basic sanitation, water and electricity services also grew.</p>
+            
+            <p>Sadly, the project fell way behind schedule. Instead of building 496 new schools in three years, only 77 were completed. Now, four years later, with ASIDI in its seventh year, 187 schools have been completed, but that’s just 52% of the target – and that target has shrunk since 2013 to 363. </p>
+            
+            <p>The target numbers and “achieved” figures below are taken from a <a href = “https://www.education.gov.za/Portals/0/Documents/Reports/Report%20PC%20committee%20ASIDI%20February.pdf?ver=2018-03-07-090851-047”>presentation</a> made by the department of education to Parliament’s Portfolio Committee on Basic Education in early March 2018. Replacement schools targets and achieved were provided by a spokesperson for the department.</p>
+            
+            
+            <table class="table table-bordered table-hover table-condensed schools-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Target No. of schools</th>
+                        <th>Achieved Feb 2018</th>
+                        <th>% Achieved</th>
+                    </tr>
+                </thead>
+                <tr>
+                        <td>Replace inappropriate structures</td>
+                                <td>363*</td>
+                                        <td>188</td>
+                                                <td>52%</td>
+                </tr>
+                <tr>
+                        <td>Provide at least a basic level of sanitation</td>
+                                <td>992**</td>
+                                        <td>453</td>
+                                                <td>46%</td>
+                </tr>
+                <tr>
+                        <td>Provide access to electricity</td>
+                                <td>393**</td>
+                                        <td>374</td>
+                                                <td>95%</td>
+                </tr>
+                <tr>
+                        <td>Provide basic water supply</td>
+                                <td>1,252**</td>
+                                        <td>666</td>
+                                                <td>53%</td>
+                </tr>
+            </table>
+           <div class="notes"> * Info from DBE spokesperson &nbsp;
+            ** Info from presentation to Portfolio Committee on Basic Education</div>
+            
+            <p>“The original baseline was indeed 510 schools but with the rationalisation and mergers exercise in the Eastern Cape, that figure has since dropped to 363,” Albert Gumbo, a spokesperson for the ASIDI project, told Passmark in early March. This lower target means the department has therefore completed 52% of its target number of schools.</p>
+            
+            <p>But President Ramaphosa said in his SONA that all outstanding ASIDI projects will be completed by the end of the next financial year – that’s still 176 schools – a tough ask. So far, R8.7-billion has been spent on ASIDI projects. The Treasury this year allocated R3.7-billion over the next three years for the remainder of the work. </p>
+            
+           <p> Passmark got a list of 187 new schools that have been built through the ASIDI programme, mapped them and trawled through the ASIDI Facebook page for pictures of the new facilities. Click on the image below to <a href="../asidi_schools">view the map</a>.</p>
+           <p>&nbsp;</p>
+
+           <a href="../asidi_schools">
+                <img style="width: 90%; margin-left: 5%; margin-right: 5%;" src="../images/asidi_schools.png">
+            </a>
+<p>&nbsp;</p>
+        </div>
+        <!-- end of content box -->
+
+
+
+        <div class="content-new">&nbsp;</div>
+
+        <div class="info" style="font-size: 120%;">
+
+            <div class="newsletter-signup">
+
+                Join our email newsletter and be the first to know when we release new data.
+
+                <!-- Begin MailChimp Signup Form -->
+                <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                    #mc_embed_signup {
+                        background: #000;
+                        clear: left;
+                        font: 14px Helvetica, Arial, sans-serif;
+                        width: 100%;
+                    }
+
+                    #mc-embedded-subscribe-form {
+                        padding: 10px;
+                        line-height: 300%;
+                    }
+
+                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup">
+                    <form action="//passmark.us15.list-manage.com/subscribe/post?u=7b7219f040b95a234ff07893c&amp;id=99df178394" method="post"
+                        id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_7b7219f040b95a234ff07893c_99df178394" tabindex="-1" value="">
+                            </div>
+                            <br />
+                            <div class="clear">
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+            </div>
+            <div class="info-content">
+                <span class="bold">Contact Passmark</span>
+                <br />
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;
+                <a href="mailto:info@passmark.org.za">info@passmark.org.za</a>
+                <br />
+                <i class="fa fa-twitter" aria-hidden="true"></i> &nbsp;
+                <a href="http://twitter.com/passmarkza">@passmarkza</a>
+                <br />
+                <i class="fa fa-facebook-square" aria-hidden="true"></i> &nbsp;
+                <a href="https://www.facebook.com/passmarkza/">@passmarkza</a>
+                <br />
+                <i class="fa fa-youtube" aria-hidden="true"></i> &nbsp;
+                <a href="https://www.youtube.com/channel/UCQsT2jrqzNE3chGUsyTQfvg/videos">Passmark on YouTube</a>
+
+            </div>
+
+            <div class="taco">
+                <img src="../images/Taco-Kuiper-award-logo.png" width="130px">
+                <br /> Passmark was made possible by funding from the
+                <br />Taco Kuiper Fund for Investigative Journalism at Wits University.
+
+            </div>
+
+
+        </div>
+
+        <!--
+<script>
+    
+    function getAreaCenter(shape, coords) {
+	var coordsArray = coords.split(','),
+		center = [];
+	if (shape == 'circle') {
+		// For circle areas the center is given by the first two values
+		center = [coordsArray[0], coordsArray[1]];
+	} else {
+		// For rect and poly areas we need to loop through the coordinates
+		var coord,
+			minX = maxX = parseInt(coordsArray[0], 10),
+			minY = maxY = parseInt(coordsArray[1], 10);
+		for (var i = 0, l = coordsArray.length; i < l; i++) {
+			coord = parseInt(coordsArray[i], 10);
+			if (i%2 == 0) { // Even values are X coordinates
+				if (coord < minX) {
+					minX = coord;
+				} else if (coord > maxX) {
+					maxX = coord;
+				}
+			} else { // Odd values are Y coordinates
+				if (coord < minY) {
+					minY = coord;
+				} else if (coord > maxY) {
+					maxY = coord;
+				}
+			}
+		}
+		center = [parseInt((minX + maxX) / 2, 10), parseInt((minY + maxY) / 2, 10)];
+	}
+	return(center);
+}
+
+    var schoolPopup = function(school, label) { 
+//        console.log(school);
+        
+        // position of image
+        var position = $("#collage").position();
+        console.log(position);
+        var area = document.getElementById(school);
+        var center = getAreaCenter(area.getAttribute('poly'), area.getAttribute('coords'));
+//        alert('X-center: ' + center[0] + ', Y-center: ' + center[1]);
+        $(".hover-label").text(label);
+        $(".hover-label").css("left", (center[0]/2) + position.left).css("top", center[1] + position.top);
+        
+        
+        
+    }
+    
+</script>
+-->
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-91656845-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+</body>
+
+</html>

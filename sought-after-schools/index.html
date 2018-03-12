@@ -1,0 +1,1014 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gauteng's most sought-after schools</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Open+Sans:400,800" rel="stylesheet">
+
+
+
+    <script src="../lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles-inside.css">
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: "Open sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 70%;
+            color: #3d3d3d;
+        }
+
+        a {
+            color: dodgerblue;
+        }
+
+        #chart {
+            width: 800px;
+            height: 950px;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+
+
+
+        .explainer {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 400;
+
+            font-size: 110%;
+            font-weight: 700;
+            max-width: 200px;
+
+        }
+
+        .content_new {
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 130%;
+            line-height: 140%;
+            margin-top: 140px;
+            text-align: left;
+
+        }
+
+        .highlight {
+            font-weight: 700;
+        }
+
+        .headline {
+            font-family: Lato, Arial, "Helvetica Neue", Helvetica, sans-serif;
+            width: 100%;
+            font-size: 300%;
+            font-weight: 700;
+            line-height: 200%;
+            text-align: center;
+            color: #000;
+        }
+
+        .crosshead {
+            font-family: "Slabo 27px", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 160%;
+            margin-top: 5%;
+            color: #000;
+        }
+
+        .labels {
+            stroke: none;
+            fill: #000;
+            font-size: 100%;
+
+
+        }
+
+        .show-schools {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+
+        .public-schools {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+
+        .header_chart {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            font-weight: 700;
+            font-size: 90%;
+            width: 100px;
+            text-align: right;
+        }
+
+
+        line {
+            shape-rendering: crispEdges;
+        }
+
+        g.all {
+            fill: #eee;
+            background: #eee;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 0px;
+            left: 500px;
+            z-index: 200;
+            opacity: 0;
+            padding: 5px;
+            background: #fff;
+            text-align: center;
+
+        }
+
+        .fa-spinner {
+            color: dodgerblue;
+        }
+
+        .loading {
+            position: absolute;
+            top: 0px;
+            width: 100px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .sub {
+            font-weight: 400;
+            color: gray;
+            font-size: 100%;
+        }
+
+        .leaflet-container {
+            background: #fff;
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            background: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100px;
+            background: #000;
+            padding-top: 2%;
+            font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 300%;
+            font-weight: 700;
+            color: #fff;
+            background-image: url("../images/scaled_schooldesks.jpg");
+            background-position: right bottom;
+            background-size: cover;
+
+            text-shadow: 1px 1px 26px rgba(0, 0, 0, 1);
+        }
+
+        .header a {
+            font-weight: 400;
+            color: #eee;
+
+
+        }
+
+        .header a:hover {
+            color: #fff;
+        }
+
+        .taco {
+            margin-top: 50px;
+        }
+
+        .collage {
+
+
+
+            margin-bottom: 50px;
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .collage.img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .caption {
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 120%;
+
+        }
+
+        .schools-table {
+            width: 100%;
+        }
+
+        .schools-table td {
+            padding: 3px;
+            font-size: 85%;
+            /*            border: solid 1px gray;*/
+            margin: 0;
+            background: #eee;
+        }
+
+        .schools-table th {
+            font-size: 90%;
+            /*
+            color: #fff;
+            background: #000;
+*/
+            padding: 3px;
+        }
+
+        .hover-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            border: solid 1px #eee;
+            border-radius: 5px;
+            z-index: 500;
+            padding: 3px 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="nav-wrap">
+    </div>
+
+
+
+    <div id="container">
+        <div class="header">
+            Passmark
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <div style="font-size: 40%; margin-top: 1%;">
+                <a href="http://passmark.org.za">Home &nbsp;
+                </a>
+                <a href="../about.html" style="margin-right: 0;">About</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="content_new">
+            <!--    Styles
+   headline
+   crosshead
+   highlight
+   -->
+            <div class="headline">Gauteng’s most sought-after schools</div>
+
+        </div>
+
+
+
+        <div class="collage">
+            <!--    <img src="schoo_collage.jpg" >-->
+            <img src="schoo_collage.jpg" alt="" id="collage" usemap="#Map" />
+            <map name="Map" id="Map">
+                <area id="school-1" alt="" title="" href="#" shape="poly" coords="3,7,393,6,392,224,5,227" />
+                <area id="school-2" alt="" title="" href="#" shape="poly" coords="406,6,792,6,792,224,408,225" />
+                <area alt="" title="" href="#" shape="poly" coords="803,6,1189,5,1190,225,804,226" />
+                <area alt="" title="" href="#" shape="poly" coords="7,240,391,237,393,456,10,456" />
+                <area alt="" title="" href="#" shape="poly" coords="402,236,793,235,795,456,404,459" />
+                <area alt="" title="" href="#" shape="poly" coords="802,238,1188,235,1192,458,804,459" />
+
+            </map>
+            <div class="caption">Top row: Boksburg High School (Boksburg, Ekurhuleni), Hoerskool Akasia (Akasia, Tshwane) and Mondeor High School
+                (Mondeor, Johannesburg) are the three Gauteng high schools that received the most applications for the 2018
+                grade 8 intake after the first online registration period. Bottom row: Phumlani Secondary School (Katlehong,
+                Ekurhuleni), Ribane-Laka Secondary (Mamelodi East, Tshwane), and Forte Secondary (Dobsonville, Johannesburg)
+                are the three no-fee schools that received the most applications and had reached their capacity by November
+                1. Pics: Google Earth</div>
+        </div>
+
+        <div class="content_new">
+
+            <p>We all want our children to go to good schools, right? And, let’s face it, some schools are way better than others.
+                Who wants to send their seven-year-old to a school with broken toilets and no sports fields? </p>
+
+            <p>And when it comes to high schools, we want our teenagers to get the best chance of passing Grade 12 in a school
+                that has properly stocked science labs, computers and class sizes small enough for teachers to handle.</p>
+
+            <p>But what if you can’t get your child into the school you want? </p>
+
+            <p>On November 1, when Gauteng’s online registration system opened for late applications for grades 1 and 8 for
+                the 2018 school year, I took a look to see which public school options were available for my youngest, who’s
+                starting high school in 2018. Not one of the four high schools near to where I live, and to which I’d choose
+                to send my child, had places available. </p>
+
+            <p>In fact, by November, 402 schools had “received applications beyond their capacity” and were not available for
+                late applications, Panyaza Lesufi, the head of Gauteng’s Education Department (GDE), said in a media statement
+                when the online registration system opened again for late applications.</p>
+
+            <p>The GDE posted a PowerPoint document entitled
+                <a href="http://www.education.gpg.gov.za/Documents/Schools%20that%20are%20not%20available%20for%20late%20applications.pptx">High pressure areas and schools. Schools that are not available for late applications</a> on its website.
+                There were 457 schools on the list, but three of the schools were listed twice, and there were a couple of
+                mistakes in the numbering so altogether there were 451 not-available schools on the list – 248 primary schools,
+                201 high schools and two “combined schools”. You can see where all the full schools are in an interactive
+                map at the end of this story. </p>
+
+            <div class="crosshead">Big demand for a small number of high schools</div>
+            <p>The most striking thing about the department’s list of “full schools” is how a small number of high schools seem
+                to have received a huge number of applications for grade 8. </p>
+
+            <p>According to Lesufi, by 1 November, 98,928 of next year’s grade 8s had been placed in a school. Incredibly, 40,292
+                applications – 40% of the number that have been placed – were submitted to just 34 high schools. </p>
+
+            <p>Each of those high schools received more than 1,000 applications for grade 8. The combined capacity of those
+                34 schools was just over 8,300, according to the GDE. So more than 20,000 parents who applied to one of those
+                schools at the beginning of this year would have been turned down and their child offered a place in another
+                school. </p>
+
+            <p>There are 616 high schools listed on Gauteng’s latest available
+                <a href="http://www.education.gpg.gov.za/Schools/Documents/Public%20Schools%202017-05-10.xls">masterlist</a>, so those 34 really popular schools are just 5% of the high schools. </p>
+
+            <p>What’s also interesting is that all these schools, except for one, are fee-paying schools. Phumlani Secondary
+                in Katlehong is the only school that isn’t a former Model C school and it’s the only one that’s a no-fee
+                school. </p>
+
+            <p>These are the 34 Gauteng high schools that got more than 1,000 applications for grade 8:</p>
+
+
+            <table class="table table-bordered table-hover table-condensed schools-table">
+                <thead>
+                    <tr>
+                        <th title="Field #1">School</th>
+                        <th title="Field #2">Suburb</th>
+                        <th title="Field #3">Municipality</th>
+                        <th title="Field #4">No. of applicants</th>
+                        <th title="Field #5">Capacity</th>
+                        <th title="Field #6">No-fee/
+                            <br/>fee-paying?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Boksburg High School</td>
+                        <td>Boksburg</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1563</td>
+                        <td align="right">420</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hoerskool Akasia</td>
+                        <td>Akasia</td>
+                        <td>Tshwane</td>
+                        <td align="right">1525</td>
+                        <td align="right">240</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Mondeor High School</td>
+                        <td>Mondeor</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1515</td>
+                        <td align="right">360</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Pretoria High School for Girls</td>
+                        <td>Arcadia</td>
+                        <td>Tshwane</td>
+                        <td align="right">1512</td>
+                        <td align="right">343</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Alberton High School</td>
+                        <td>Alberton</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1473</td>
+                        <td align="right">175</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Sir John Adamson High School</td>
+                        <td>Winchester Hills</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1422</td>
+                        <td align="right">320</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hoerskool President</td>
+                        <td>Ridgeway</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1350</td>
+                        <td align="right">360</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Northcliff High School</td>
+                        <td>Northcliff Ex 3</td>
+                        <td>Johannesbur</td>
+                        <td align="right">1288</td>
+                        <td align="right">280</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Benoni High School</td>
+                        <td>Benoni</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1285</td>
+                        <td align="right">335</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hoerskool Gerrit Maritz </td>
+                        <td>Pretoria North</td>
+                        <td>Tshwane</td>
+                        <td align="right">1251</td>
+                        <td align="right">200</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Germiston High School</td>
+                        <td>Germiston</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1226</td>
+                        <td align="right">245</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Edenvale High School</td>
+                        <td>Edenvale</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1198</td>
+                        <td align="right">303</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Lenasia Secondary School</td>
+                        <td>Lenasia</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1182</td>
+                        <td align="right">240</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Rand Park High School</td>
+                        <td>Randpark Ridge</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1154</td>
+                        <td align="right">300</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Krugersdorp High School</td>
+                        <td>Krugersdorp</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1139</td>
+                        <td align="right">280</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hoerskool Birchleigh</td>
+                        <td>Kempton Park</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1137</td>
+                        <td align="right">315</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hoerskool Langenhoven </td>
+                        <td>Capital Park</td>
+                        <td>Tshwane</td>
+                        <td align="right">1136</td>
+                        <td align="right">319</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Florida Park High School</td>
+                        <td>Florida</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1110</td>
+                        <td align="right">315</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Pretoria Boys’ High School</td>
+                        <td>Brooklyn</td>
+                        <td>Tshwane</td>
+                        <td align="right">1104</td>
+                        <td align="right">320</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Parktown Girls’ High School</td>
+                        <td>Parkview</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1094</td>
+                        <td align="right">210</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Jeppe High School for Girls</td>
+                        <td>Kensington</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1082</td>
+                        <td align="right">207</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Sunward Park High School</td>
+                        <td>Boksburg</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1078</td>
+                        <td align="right">385</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Edenglen High School</td>
+                        <td>Edenvale</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1072</td>
+                        <td align="right">280</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>King Edward VII High School</td>
+                        <td>Houghton</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1071</td>
+                        <td align="right">244</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hoerskool Suiderlig</td>
+                        <td>Vanderbijlpark</td>
+                        <td>Sedibeng </td>
+                        <td align="right">1064</td>
+                        <td align="right">200</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Willowmore High</td>
+                        <td>Benoni</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1046</td>
+                        <td align="right">256</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Jeppe High School for Boys</td>
+                        <td>Kensington</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1035</td>
+                        <td align="right">223</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Rand Meisieskool-Girls School </td>
+                        <td>Parktown</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1033</td>
+                        <td align="right">255</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>The Glen High School</td>
+                        <td>Waterkloof Glen</td>
+                        <td>Tshwane</td>
+                        <td align="right">1033</td>
+                        <td align="right">237</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Bryanston High School</td>
+                        <td>Bryanston</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1027</td>
+                        <td align="right">207</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Sutherland High School</td>
+                        <td>Centurion</td>
+                        <td>Tshwane</td>
+                        <td align="right">1027</td>
+                        <td align="right">271</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>West Ridge High School</td>
+                        <td>Roodepoort</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1025</td>
+                        <td align="right">315</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Queens High School</td>
+                        <td>Bez Valley</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1023</td>
+                        <td align="right">290</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Phumlani Secondary School </td>
+                        <td>Katlehong</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">1012</td>
+                        <td align="right">210</td>
+                        <td>No-fee</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
+            <div class="crosshead">Popular primary schools</div>
+            <p>In contrast to the high schools, only three primary schools got more than 1,000 applications each for grade 1
+                by November: Laerskool Akasia, Laerskool Theresapark and Bryanston Primary School.</p>
+
+            <p>These are the 20 Gauteng primary schools that had received the most applications for grade 1 by November 2017:</p>
+
+
+            <table class="table table-bordered table-hover table-condensed schools-table">
+                <thead>
+                    <tr>
+                        <th title="Field #1">School</th>
+                        <th title="Field #2">Suburb</th>
+                        <th title="Field #3">Municipality</th>
+                        <th title="Field #4">No. of applicants</th>
+                        <th title="Field #5">Capacity</th>
+                        <th title="Field #6">No-fee/ Fee-paying</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laerskool Akasia</td>
+                        <td>Akasia</td>
+                        <td>Tshwane</td>
+                        <td align="right">1339</td>
+                        <td align="right">200</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Laerskool Theresapark</td>
+                        <td>Theresapark</td>
+                        <td>Tshwane</td>
+                        <td align="right">1080</td>
+                        <td align="right">180</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Bryanston Primary School</td>
+                        <td>Bryanston</td>
+                        <td>Johannesburg</td>
+                        <td align="right">1011</td>
+                        <td align="right">120</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Hamilton Primary School</td>
+                        <td>Pretoria Central</td>
+                        <td>Tshwane</td>
+                        <td align="right">897</td>
+                        <td align="right">97</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Laerskool Silverton</td>
+                        <td>Silverton </td>
+                        <td>Tshwane</td>
+                        <td align="right">877</td>
+                        <td align="right">301</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Alberton Primary School</td>
+                        <td>Alberton</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">837</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Mondeor Primary School</td>
+                        <td>Mondeor</td>
+                        <td>Johannesburg</td>
+                        <td align="right">787</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Alston Primary School</td>
+                        <td>Germiston </td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">786</td>
+                        <td align="right">280</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Laerskool Oos-eind</td>
+                        <td>Sunnyside</td>
+                        <td>Tshwane</td>
+                        <td align="right">755</td>
+                        <td align="right">237</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Arcadia Primary School</td>
+                        <td>Arcadia</td>
+                        <td>Tshwane</td>
+                        <td align="right">753</td>
+                        <td align="right">102</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Alberview Primary School</td>
+                        <td>Randhart</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">748</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Selcourt Primary School</td>
+                        <td>Springs</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">746</td>
+                        <td align="right">200</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Florida Primary School</td>
+                        <td>Florida</td>
+                        <td>Johannesburg</td>
+                        <td align="right">738</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Germiston South Primary school</td>
+                        <td>Germiston</td>
+                        <td>Ekurhuleni</td>
+                        <td align="right">713</td>
+                        <td align="right">200</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Constantia Kloof Primary School</td>
+                        <td>Roodepoort</td>
+                        <td>Johannesburg</td>
+                        <td align="right">712</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Meredale Primary School</td>
+                        <td>Meredale</td>
+                        <td>Johannesburg</td>
+                        <td align="right">708</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Laerskool Danie Malan</td>
+                        <td>Pretoria North</td>
+                        <td>Tshwane</td>
+                        <td align="right">699</td>
+                        <td align="right">194</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Laerskool Rachel De Beer</td>
+                        <td>Pretoria North</td>
+                        <td>Tshwane</td>
+                        <td align="right">686</td>
+                        <td align="right">223</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Horzon View Primary School</td>
+                        <td>Roodepoort</td>
+                        <td>Johannesburg</td>
+                        <td align="right">684</td>
+                        <td align="right">160</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                    <tr>
+                        <td>Laerskool Meyerspark</td>
+                        <td>Meyerspark</td>
+                        <td>Tshwane</td>
+                        <td align="right">670</td>
+                        <td align="right">207</td>
+                        <td>Fee-paying</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="width: 100%; text-align: center; margin-top: 50px;">
+                <img src="GP_schools.png">
+            </div>
+
+
+            <p> According to Lesufi, 123,450 grade ones and 98,928 grade eights had been placed in a school by November. But
+                that’s only 77% of the 285,834 learners who applied before November. That means more than 60,000 learners
+                who had applied early had yet to be placed in a school.</p>
+
+            <p>There’s a lesson in this for parents: if you want to get your child into the school of your choice, apply early.
+            </p>
+
+            <p>The interactive map below shows where the schools that were full by November 2017 are (red dots), and where those
+                that were therefore likely to still be open for late applications (yellow dots). Hover over the dots and
+                zoom in to explore the schools yourself.</p>
+
+
+            <iframe width="100%" height="650" frameborder="0" src="https://ljgrant2.carto.com/viz/c191ccc8-1fc0-4fd7-b560-2dac67b60b6b/embed_map"
+                allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+
+
+
+
+
+
+
+        </div>
+        <!-- end of content box -->
+
+
+
+        <div class="content-new">&nbsp;</div>
+
+        <div class="info" style="font-size: 120%;">
+
+            <div class="newsletter-signup">
+
+                Join our email newsletter and be the first to know when we release new data.
+
+                <!-- Begin MailChimp Signup Form -->
+                <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                    #mc_embed_signup {
+                        background: #000;
+                        clear: left;
+                        font: 14px Helvetica, Arial, sans-serif;
+                        width: 100%;
+                    }
+
+                    #mc-embedded-subscribe-form {
+                        padding: 10px;
+                        line-height: 300%;
+                    }
+
+                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup">
+                    <form action="//passmark.us15.list-manage.com/subscribe/post?u=7b7219f040b95a234ff07893c&amp;id=99df178394" method="post"
+                        id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_7b7219f040b95a234ff07893c_99df178394" tabindex="-1" value="">
+                            </div>
+                            <br />
+                            <div class="clear">
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+            </div>
+            <div class="info-content">
+                <span class="bold">Contact Passmark</span>
+                <br />
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;
+                <a href="mailto:info@passmark.org.za">info@passmark.org.za</a>
+                <br />
+                <i class="fa fa-twitter" aria-hidden="true"></i> &nbsp;
+                <a href="http://twitter.com/passmarkza">@passmarkza</a>
+                <br />
+                <i class="fa fa-facebook-square" aria-hidden="true"></i> &nbsp;
+                <a href="https://www.facebook.com/passmarkza/">@passmarkza</a>
+                <br />
+                <i class="fa fa-youtube" aria-hidden="true"></i> &nbsp;
+                <a href="https://www.youtube.com/channel/UCQsT2jrqzNE3chGUsyTQfvg/videos">Passmark on YouTube</a>
+
+            </div>
+
+            <div class="taco">
+                <img src="../images/Taco-Kuiper-award-logo.png" width="130px">
+                <br /> Passmark was made possible by funding from the
+                <br />Taco Kuiper Fund for Investigative Journalism at Wits University.
+
+            </div>
+
+
+        </div>
+
+        <!--
+<script>
+    
+    function getAreaCenter(shape, coords) {
+	var coordsArray = coords.split(','),
+		center = [];
+	if (shape == 'circle') {
+		// For circle areas the center is given by the first two values
+		center = [coordsArray[0], coordsArray[1]];
+	} else {
+		// For rect and poly areas we need to loop through the coordinates
+		var coord,
+			minX = maxX = parseInt(coordsArray[0], 10),
+			minY = maxY = parseInt(coordsArray[1], 10);
+		for (var i = 0, l = coordsArray.length; i < l; i++) {
+			coord = parseInt(coordsArray[i], 10);
+			if (i%2 == 0) { // Even values are X coordinates
+				if (coord < minX) {
+					minX = coord;
+				} else if (coord > maxX) {
+					maxX = coord;
+				}
+			} else { // Odd values are Y coordinates
+				if (coord < minY) {
+					minY = coord;
+				} else if (coord > maxY) {
+					maxY = coord;
+				}
+			}
+		}
+		center = [parseInt((minX + maxX) / 2, 10), parseInt((minY + maxY) / 2, 10)];
+	}
+	return(center);
+}
+
+    var schoolPopup = function(school, label) { 
+//        console.log(school);
+        
+        // position of image
+        var position = $("#collage").position();
+        console.log(position);
+        var area = document.getElementById(school);
+        var center = getAreaCenter(area.getAttribute('poly'), area.getAttribute('coords'));
+//        alert('X-center: ' + center[0] + ', Y-center: ' + center[1]);
+        $(".hover-label").text(label);
+        $(".hover-label").css("left", (center[0]/2) + position.left).css("top", center[1] + position.top);
+        
+        
+        
+    }
+    
+</script>
+-->
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-91656845-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+</body>
+
+</html>

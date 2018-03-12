@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SONA 2018</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="utilityfunctions.js"></script>
+    <script src="d3annotations.min.js"></script>
+    <script src="d3v4/d3.min.js"></script>
+</head>
+
+<body>
+<div class="tooltip">Tooltip</div>
+
+
+
+<div class="head">6 State of the Nation Addresses:<br />2014 - 2018</div>
+
+<div class="subhead">A new dawn, or more of the same? A comparison of Cyril Ramphosa’s speech with Jacob Zuma’s
+    </div>
+
+<div class="intro">
+        <p>Just two days into his presidency, Cyril Ramaphosa gave his first State of the Nation Address in Parliament on February 16, 2018. It was generally well received. In fact he even seems to have managed to ignite a renewed sense of hope in a nation that is fed up with its government. He dedicated a substantial chunk of his speech to persuading South Africans to put “the era of discord, disunity and disillusionment” behind them. “A new dawn is upon us,” he said.</p> 
+
+        <p>What does that mean? Working on the assumption that the number of words the president devotes to a topic is an indication of the level of importance he places on that topic, Passmark looked at President Ramaphosa’s first speech and visualised the 12 topics that got the most airtime. We then looked at how those same 12 topics featured in the last five SONA speeches presented by the former president, Jacob Zuma. Education has been in the top 12 since February 2014, except for one year, 2016, which was, ironically, the first SONA after the #FeesMustFall protests started on campuses around the country. </p> 
+
+        <!-- You can see what the top 12 subjects were in that SONA as well as Zuma’s other four by clicking on the “XXX” button. -->
+
+</div>
+<div id="chart">
+    <div class="controls">
+            
+        <select id="topics">
+            <option value="0">Select a topic to highlight</option>
+            <option value="1">Agriculture/Rural development/Land redistribution</option>
+            <option value="2">Corruption</option>
+            <option value="3">Economy/Economic policy</option>
+            <option value="4">Education</option>
+            <option value="5">Govt/Public service performance</option>
+            <option value="6">Health</option>
+            <option value="7">Jobs/Unemployment/Labour relations</option>
+            <option value="8">Mining sector</option>
+            <option value="9">Small business development</option> 
+            <option value="10">Social cohesion/Nation building</option>
+            <option value="11">State-owned enterprises</option>
+            <option value="12">Water & sanitation</option>
+        </select>
+        <div class="info"><i class="fa fa-info-circle"></i> <span class="info-label">Show/hide labels</span></div>
+    </div>
+    <div class="chart-holder">
+            
+        <div id="chart1" class="chart">
+            <div class="date">February 2018: Cyril Ramaphosa</div>
+            
+        </div>
+
+        
+        
+        <div class="legend legend1">
+            <div class="legend-row">
+                <div class="legend-color color1"></div>
+                <div class="legend-title title1">Legend title</div>
+            </div>
+            <div class="legend-row">
+                    <div class="legend-color color2"></div>
+                    <div class="legend-title title2">Legend title</div>
+                </div>
+                <div class="legend-row">
+                        <div class="legend-color color3"></div>
+                        <div class="legend-title title3">Legend title</div>
+                    </div>
+        </div>
+        <div style="clear: both;"></div>
+        
+    </div>
+
+    <div class="chart-holder">
+        <div id="chart2" class="chart">
+            <div class="date">February 2017: Jacob Zuma</div>
+        </div>
+        <div class="legend legend2">
+                <div class="legend-row">
+                    <div class="legend-color color1"></div>
+                    <div class="legend-title title1">Legend title</div>
+                </div>
+                <div class="legend-row">
+                        <div class="legend-color color2"></div>
+                        <div class="legend-title title2">Legend title</div>
+                    </div>
+                    <div class="legend-row">
+                            <div class="legend-color color3"></div>
+                            <div class="legend-title title3">Legend title</div>
+                        </div>
+            </div>
+
+        <div style="clear: both;"></div>
+        </div>
+
+
+    <div class="chart-holder">
+        <div id="chart3" class="chart">
+            <div class="date">February 2016: Jacob Zuma</div>
+        </div>
+        <div class="legend legend3">
+                <div class="legend-row">
+                    <div class="legend-color color1"></div>
+                    <div class="legend-title title1">Legend title</div>
+                </div>
+                <div class="legend-row">
+                        <div class="legend-color color2"></div>
+                        <div class="legend-title title2">Legend title</div>
+                    </div>
+                    <div class="legend-row">
+                            <div class="legend-color color3"></div>
+                            <div class="legend-title title3">Legend title</div>
+                        </div>
+            </div>
+
+        <div style="clear: both;"></div>
+        </div>
+
+    <div class="chart-holder">
+        <div id="chart4" class="chart">
+            <div class="date">February 2015: Jacob Zuma</div>
+        </div>
+        <div class="legend legend4">
+                <div class="legend-row">
+                    <div class="legend-color color1"></div>
+                    <div class="legend-title title1">Legend title</div>
+                </div>
+                <div class="legend-row">
+                        <div class="legend-color color2"></div>
+                        <div class="legend-title title2">Legend title</div>
+                    </div>
+                    <div class="legend-row">
+                            <div class="legend-color color3"></div>
+                            <div class="legend-title title3">Legend title</div>
+                        </div>
+            </div>
+            
+        <div style="clear: both;"></div>
+        </div>
+
+
+        <div class="chart-holder">
+                <div id="chart5" class="chart">
+                    <div class="date">June 2014: Jacob Zuma</div>
+                </div>
+                <div class="legend legend5">
+                        <div class="legend-row">
+                            <div class="legend-color color1"></div>
+                            <div class="legend-title title1">Legend title</div>
+                        </div>
+                        <div class="legend-row">
+                                <div class="legend-color color2"></div>
+                                <div class="legend-title title2">Legend title</div>
+                            </div>
+                            <div class="legend-row">
+                                    <div class="legend-color color3"></div>
+                                    <div class="legend-title title3">Legend title</div>
+                                </div>
+                    </div>
+                    
+                <div style="clear: both;"></div>
+                </div>
+
+
+                <div class="chart-holder">
+                        <div id="chart6" class="chart">
+                            <div class="date">February 2014: Jacob Zuma</div>
+                        </div>
+                        <div class="legend legend6">
+                                <div class="legend-row">
+                                    <div class="legend-color color1"></div>
+                                    <div class="legend-title title1">Legend title</div>
+                                </div>
+                                <div class="legend-row">
+                                        <div class="legend-color color2"></div>
+                                        <div class="legend-title title2">Legend title</div>
+                                    </div>
+                                    <div class="legend-row">
+                                            <div class="legend-color color3"></div>
+                                            <div class="legend-title title3">Legend title</div>
+                                        </div>
+                            </div>
+                            
+                        <div style="clear: both;"></div>
+                        </div>
+    
+
+    <div style="clear: both;"></div>
+</div>
+</body>
+
+<script src="app.js"></script>
+</html>

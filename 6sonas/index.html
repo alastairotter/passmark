@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91656845-1"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+        
+                gtag('config', 'UA-91656845-1');
+        </script>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SONA 2018</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url"                content="http://passmark.org.za/6sonas" />
+        <meta property="og:type"               content="site" />
+        <meta property="og:title"              content="6 State of the Nation addresses compared: 2014 - 2018" />
+        <meta property="og:description"        content="An interactive comparison of President Cyril Ramaphosa's 2018 State of the Nation address with the last five State of the Nation addresses by Jacob Zuma." />
+        <meta property="og:image"              content="http://passmark.org.za/6sonas/sona.png"/>
+        <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@passmark" />
+<meta name="twitter:title" content="6 State of the Nation addresses compared: 2014 - 2018" />
+<meta name="twitter:description" content="An interactive comparison of President Cyril Ramaphosa's 2018 State of the Nation address with the last five State of the Nation addresses by Jacob Zuma." />
+<meta name="twitter:image" content="http://passmark.org.za/6sonas/sona.png" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:600" rel="stylesheet">
+
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <script src="utilityfunctions.js"></script>
+        <script src="d3annotations.min.js"></script>
+        <script src="d3v4/d3.min.js"></script>
+        <script src="jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+        <meta name="theme-color" content="#3E4DB2">
+        <link rel="manifest" href="manifest.js">
+        <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+        <script src="waypoints/jquery.waypoints.min.js"></script>
+        <script src="waypoints/shortcuts/sticky.min.js"></script>
+
+</head>
+
+<body>
+
+        
+        <div class="mytooltip">Tooltip</div>
+
+        <div class="passmark">
+                <a href="http://passmark.org.za">Passmark <i class="fa fa-check-square-o" aria-hidden="true"></i></a></div>
+
+        <div class="head">6 State of the Nation Addresses:
+                <br />2014 - 2018</div>
+
+        <div class="subhead">
+                A new dawn, or more of the same? A comparison of Cyril Ramphosa’s speech with Jacob Zuma’s
+
+        <div class="bylines">
+                Laura Grant & Alastair Otter
+        </div>
+        </div>
+
+        <div class="intro">
+                <p>President Cyril Ramaphosa dedicated a substantial chunk of his first State of the Nation Address in Parliament
+                        on February 16 2018, to persuading South Africans to put “the era of discord, disunity and disillusionment”
+                        behind them. “A new dawn is upon us,” he said.</p>
+
+                <p>What does that mean? Working on the assumption that the number of words the president devotes to a topic is an indication of the level of importance he places on that topic, Passmark looked at the past six State of the Nation addresses and visualised the 12 topics that got the most airtime. Education, we are happy to report, has been in the top 12 in all but one year, 2016, which was, ironically, just after the #FeesMustFall protests started on campuses around the country.</p>
+
+                <p class="crosshead">Do the comparison</p>
+
+                <p>We also compared Cyril Ramaphosa's top 12 topics with the number of words Jacob Zuma dedicated to those same topics in his SONA speeches. To see that comparison, click the 'compare' button below.</p>
+
+        </div> <!-- Intro -->
+
+<div class="sticky">
+                <div class="buttons">
+                                <button class="btn btn-sm jz onclick="this.blur();"">Top topics by year</button> &nbsp; 
+                        <button class="btn btn-sm cr onclick="this.blur();"">Compare JZ to CR</button> 
+                        
+                </div>
+                <div class="row topics">
+
+                        <div class="col-md-12">
+                               
+                        <!-- </div> -->
+
+                        <!-- <div class="col-md-6 options"> -->
+
+                                <div class="dropdown">
+                                        &nbsp; &nbsp; &nbsp;
+                                                <button class="btn btn-sm btn-secondary info notes" onclick="this.blur();">Show notes</button>
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Select a topic
+                                        </button>
+                                        <button class="btn btn-sm btn-secondary reset reset-button">Reset</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <!-- <a class="dropdown-item">Agriculture/Rural Development/Land redistribution</a>
+                                                <a class="dropdown-item">Another action</a>
+                                                <a class="dropdown-item" href="#">Something else here</a> -->
+
+
+                <a class="dropdown-item">Agriculture/Rural development/Land redistribution</a>
+                <a class="dropdown-item">Banking/financial sector</a>
+                <a class="dropdown-item">BEE/Radical economic transformation</a>
+                <a class="dropdown-item">Corruption</a>
+                <a class="dropdown-item">Crime</a>
+                <a class="dropdown-item">Economy/Economic policy</a>
+                <a class="dropdown-item">Education</a>
+                <a class="dropdown-item">Electricity supply/Energy security</a>
+                <a class="dropdown-item">Govt/Public service performance</a>
+                <a class="dropdown-item">Health</a>
+                <a class="dropdown-item">Housing</a>
+                <a class="dropdown-item">Infrastructure development</a>
+                <a class="dropdown-item">International relations</a>
+                <a class="dropdown-item">International trade & investment</a>
+                <a class="dropdown-item">Jobs</a>
+                <a class="dropdown-item">Jobs/Unemployment/Labour relations</a>
+                <a class="dropdown-item">Judicial system</a>
+                <a class="dropdown-item">Mining sector</a>
+                <a class="dropdown-item">Operation Phakisa</a>
+                <a class="dropdown-item">People with disabilities</a>
+                <a class="dropdown-item">Protests/violence</a>
+                <a class="dropdown-item">Racism</a>
+                <a class="dropdown-item">Science & technology</a>
+                <a class="dropdown-item">Small business development</a>
+                <a class="dropdown-item">Social cohesion/Nation building</a>
+                <a class="dropdown-item">State-owned enterprises</a>
+                <a class="dropdown-item">Water & sanitation</a>
+                                        </div>
+
+                                </div>
+
+                        </div>
+
+
+
+
+                </div>
+
+                </div> <!-- End Sticky -->
+
+
+
+        
+
+
+        <div id="wrap" class="clearfix">
+
+                
+
+
+
+                <div class="row no-gutters">
+                        <div class="chart-box col-md-6 col-sm-12">
+                                <div class="chartholder">
+                                        <div id="chart1" class="chart">
+                                                <div class="date">February 2018: Cyril Ramaphosa</div>
+                                        </div>
+                                </div>
+                                <div class="detailsholder">
+                                        <div class="details">
+                                                Not surprisingly, given the recent credit rating downgrades, and years of slow growth, the economy features strongly, along
+                                                with jobs and unemployment, particularly youth unemployment. Social cohesion/nation
+                                                building was right up there too because the new president has to win back
+                                                the trust of a disillusioned electorate bruised by a constant barrage of
+                                                “state capture” headlines, which also explains why corruption was one of
+                                                the top-five topics. We ranked education at number five, with the free higher
+                                                education and training for the poor and working class policy, which comes
+                                                into effect this year, dominating the topic. The president also said the
+                                                ASIDI initiative to build modern facilities at rural and underprivileged
+                                                schools will be completed by the end of the next financial year.
+
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="chart-box col-md-6 col-sm-12">
+                                <div class="chartholder">
+                                        <div id="chart2" class="chart">
+                                                <div class="date">February 2017: Jacob Zuma</div>
+                                        </div>
+                                </div>
+                                <div class="detailsholder">
+                                        <div class="details">
+                                                Education featured strongly in President Zuma’s last SONA, dominated by his response to the #FeesMustFall protests at tertiary
+                                                education institutions. But the topic that got most of the president’s attention
+                                                was radical economic transformation/black economic empowerment.
+                                        </div>
+
+                                </div>
+                        </div>
+
+                </div>
+
+
+
+
+
+                <div class="row no-gutters">
+                        <div class="chart-box col-md-6 col-sm-12">
+                                <div class="chartholder">
+                                        <div id="chart3" class="chart">
+                                                <div class="date">February 2016: Jacob Zuma</div>
+                                        </div>
+                                </div>
+                                <div class="detailsholder">
+                                        <div class="details">
+                                                The economy, once again was centre stage, followed by an acknowledgement of growing concerns over the performance of state-owned
+                                                enterprises, such as Eskom, the electricity utility. Also in the top three
+                                                topics was an undertaking to “spend public funds wisely and cut wasteful
+                                                expenditure”. Less than 100 words were spoken on the subject of education,
+                                                which ranked 17th on our word-count scale, all of it on cost of higher education.
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="chart-box col-md-6 col-sm-12">
+                                <div class="chartholder">
+                                        <div id="chart4" class="chart">
+                                                <div class="date">February 2015: Jacob Zuma</div>
+                                        </div>
+                                </div>
+                                <div class="detailsholder">
+                                        <div class="details">
+                                                Education ranked eighth this year, with the president talking mostly about the government’s ASIDI school infrastructure initiative.
+                                                But the country’s electricity shortage, described by the president as “an
+                                                impediment to economic growth and is a major inconvenience to everyone in
+                                                the country” and financial problems at state electricity utility Eskom, rose
+                                                to the top spot this year.
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
+
+
+
+                <div class="row no-gutters">
+                        <div class="chart-box col-md-6 col-sm-12">
+                                <div class="chartholder">
+                                        <div id="chart5" class="chart">
+                                                <div class="date">June 2014: Jacob Zuma</div>
+                                        </div>
+                                </div>
+                                <div class="detailsholder">
+                                        <div class="details">
+                                                This was President Zuma’s first SONA after the 2014 national elections. He had a lot to say about the performance of local
+                                                government, outlining his action plan to help municipalities overcome their
+                                                challenges, many of which had sparked sometimes violent protests. Electricity
+                                                challenges ranked second. Education made it into the top 12, with Zuma saying
+                                                the aim was to have 250,000 grade 12 getting university entrance passes by
+                                                2019.
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="chart-box col-md-6 col-sm-12">
+                                <div class="chartholder">
+                                        <div id="chart6" class="chart">
+                                                <div class="date">February 2014: Jacob Zuma</div>
+                                        </div>
+                                </div>
+                                <div class="detailsholder">
+                                        <div class="details">
+                                                Besides the state of the economy, violent protests featured prominently. “The dominant narrative in the case of the protests
+                                                in South Africa has been to attribute them to alleged failures of government.
+                                                However the protests are not simply the result of ‘failures’ of government
+                                                but also of the success in delivering basic services,” the president told
+                                                the nation. Education was ranked fourth: it was a celebration of the government’s
+                                                achievements in increasing the number of children enrolled in schools, particularly
+                                                no-fee schools, as well as the school nutrition programme.
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
+
+
+
+        </div>
+
+
+        <div class="endnote">
+                Share
+                <div class="share">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpassmark.org.za%2F6sonas%2F" class="facebook" target="_blank" rel="noopener"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;
+    
+                                <a class="twitter-share-button twitter" target="_new"
+                              href="https://twitter.com/intent/tweet?text=An%20interactive%20comparison%20of%20President%20Cyril%20Ramaphosa%27s%202018%20State%20of%20the%20Nation%20address%20with%20the%20last%20five%20State%20of%20the%20Nation%20addresses%20by%20Jacob%20Zuma.%20http%3A%2F%2Fpassmark.org.za%2F6sonas%20via%20%40passmark%20pic.twitter.com%2FpHJvH8QsRV">
+                              <i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                </div>
+                <!-- <div class="credit">Credits</div> -->
+                
+                Data collection & analysis: <a href="http://twitter.com/LauraJGrant" class="name" target="_blank">Laura Grant</a><br />
+                Visualisation: <a href="http://twitter.com/alastairotter" target="_blank">Alastair Otter</a>
+                <br />
+                You can view the methodology we used <a href="https://docs.google.com/document/d/1NAdRBBCNBW-v9g9npdDvBF3DLSySw5cUggLns-N2e4g/edit?usp=sharing" target="_blank">here</a>.<br />
+                For more information contact <a href="mailto:info@mediahack.co.za">info@mediahack.co.za</a><br />
+                A <a href="http://mediahack.co.za" target="_blank">Media Hack Collective</a> project<br />
+                1 March 2018<br />
+        </div>
+
+        <script src="popper.min.js"></script>
+        <script src="bootstrap4/js/bootstrap.min.js"></script>
+        <script src="app.min.js"></script>
+
+</body>
+
+</html>
